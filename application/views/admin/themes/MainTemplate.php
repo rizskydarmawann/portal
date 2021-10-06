@@ -28,6 +28,61 @@
 <!-- Divider -->
 <hr class="sidebar-divider ">
 
+<div class="sidebar-heading">
+    Home
+</div>
+
+<li class="nav-item active">
+<li class="nav-item">
+   <a class="nav-link pb-0" href="<?= base_url('admin/dashboard')?>">
+    <i class="fas fa-fw fa-tachometer-alt"></i>
+    <span>Dashboard</span></a>     
+ </li>
+ <li class="nav-item">
+   <a class="nav-link pb-0" href="<?= base_url('admin/dashboard')?>">
+    <i class="fas fa-fw fa-sliders-h"></i>
+    <span>Slide Show</span></a>  
+ </li>
+
+ <li class="nav-item">
+   <a class="nav-link pb-0" href="<?= base_url('admin/dashboard')?>">
+   <i class="fas fa-fw fa-paperclip"></i>
+    <span>Link Terkait</span></a>  
+ </li>
+
+ <li class="nav-item">
+   <a class="nav-link pb-0" href="<?= base_url('admin/dashboard')?>">
+   <i class="fas fa-fw fa-newspaper"></i>
+    <span>News</span></a>  
+ </li>
+
+<hr class="sidebar-divider mt-3">
+
+
+<div class="sidebar-heading">
+    menu
+</div>
+
+<li class="nav-item active">
+<li class="nav-item">
+   <a class="nav-link pb-0" href="<?= base_url('admin/dashboard')?>">
+    <i class="fas fa-fw fa-tachometer-alt"></i>
+    <span>Dashboard</span></a>     
+ </li>
+ <li class="nav-item">
+   <a class="nav-link pb-0" href="<?= base_url('admin/dashboard')?>">
+    <i class="fas fa-fw fa-sliders-h"></i>
+    <span>Slide Show</span></a>  
+ </li>
+
+ <li class="nav-item">
+   <a class="nav-link pb-0" href="<?= base_url('admin/dashboard')?>">
+   <i class="fas fa-fw fa-paperclip"></i>
+    <span>Link Terkait</span></a>  
+ </li>
+
+<hr class="sidebar-divider mt-3">
+
 <li class="nav-item">
     <a class="nav-link" href="<?= base_url('admin/logout')?>">
         <i class="fas fa-fw fa-sign-out-alt"></i>
@@ -64,6 +119,7 @@
                                     <img class="img-profile rounded-circle"
                                         src="<?= base_url()?>assets/backend/img/avatar2.png" />
                                 </a>
+                             
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                     aria-labelledby="userDropdown">
@@ -83,13 +139,13 @@
                 </nav>
                 <?=isset($content)?$content:''?> 
     
-        
+          
                 
      <!-- Footer -->
    <footer class="sticky-footer bg-white">
        <div class="container my-auto">
            <div class="copyright text-center my-auto">
-               <span>Copyright &copy; Web Sistem Management <?= date('Y')?></span>
+               <span>Copyright &copy; <?=$this->config->item('applicationName')?> <?= date('Y')?></span>
            </div>
        </div>
    </footer>
