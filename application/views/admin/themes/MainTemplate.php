@@ -53,7 +53,7 @@
  <li class="nav-item">
    <a class="nav-link pb-0" href="<?= base_url('admin/dashboard')?>">
    <i class="fas fa-fw fa-newspaper"></i>
-    <span>News</span></a>  
+    <span>New</span></a>  
  </li>
 
 <hr class="sidebar-divider mt-3">
