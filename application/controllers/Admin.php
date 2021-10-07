@@ -35,12 +35,10 @@ class Admin extends CI_Controller {
 	  }
 
   }
-  
-  
-  
+    
   public function dashboard() {
-	  
-	  $this->libs->getView('admin/home/dashboard');
+	$data = array();	
+	$this->libs->getView('admin/home/dashboard',$data);
   }
   
   public function logout ()
@@ -48,6 +46,12 @@ class Admin extends CI_Controller {
 		$this->session->sess_destroy();
 		redirect(base_url('admin'));
 	}
+
+
+	public function slideshow() {
+		$data['title'] ='Slide Show';
+		$this->libs->getView('admin/home/slideshow',$data);
+	  }
 
 
 }
