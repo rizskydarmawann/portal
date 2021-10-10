@@ -38,7 +38,9 @@ class Admin extends CI_Controller {
     
   public function dashboard() {
 	$data = array();	
-	$this->libs->getView('admin/home/dashboard',$data);
+	$this->load->view('admin/themes/header',$data);
+	$this->load->view('admin/home/dashboard',$data);
+	$this->load->view('admin/themes/footer',$data);
   }
   
   public function logout ()
@@ -49,9 +51,13 @@ class Admin extends CI_Controller {
 
 
 	public function slideshow() {
+		
 		$data['title'] ='Slide Show';
-		$this->libs->getView('admin/home/slideshow',$data);
+		
+		$this->load->view('admin/themes/header',$data);
+		$this->load->view('admin//home/slideshow',$data);
+		$this->load->view('admin/themes/footer',$data);
 	  }
 
-
+	
 }
