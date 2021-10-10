@@ -27,6 +27,7 @@ public function getallslideshows()
 
 }
 
+
 public function proses_add_slideshows(){
 
 	$foto = str_replace(" ","_",$_FILES['foto']['name']);

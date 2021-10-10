@@ -6,6 +6,7 @@ class Admin extends CI_Controller {
   public function __construct() {
 		parent::__construct();
 		$this->load->helper(array('form', 'url','file'));
+		$this->load->model('admin_model');
   }
 
 	public function index()
@@ -38,9 +39,23 @@ class Admin extends CI_Controller {
     
   public function dashboard() {
 	$data = array();	
-	$this->load->view('admin/themes/header',$data);
-	$this->load->view('admin/home/dashboard',$data);
-	$this->load->view('admin/themes/footer',$data);
+	$this->load->view('admin/themes/header');
+	$this->load->view('admin/home/dashboard');
+	$this->load->view('admin/themes/footer');
+  }
+
+  public function slideshow() {
+	
+	$data['title'] ='Slide Show';
+	
+	$data['slide'] = $this->admin_model->getallslideshows();
+	echo '<pre>';
+	var_dump($data['slide']);
+	echo '</pre>';
+	
+	$this->load->view('admin/themes/header', $data);
+	$this->load->view('admin//home/slideshow', $data);
+	$this->load->view('admin/themes/footer');
   }
   
   public function logout ()
@@ -50,14 +65,7 @@ class Admin extends CI_Controller {
 	}
 
 
-	public function slideshow() {
-		
-		$data['title'] ='Slide Show';
-		
-		$this->load->view('admin/themes/header',$data);
-		$this->load->view('admin//home/slideshow',$data);
-		$this->load->view('admin/themes/footer',$data);
-	  }
+	
 
 	
 }

@@ -14,15 +14,22 @@
                                 <th>Foto</th>
                             </tr>
                         </thead>
+                        
                         <tbody>
+                        <?php
+                        foreach ($slide as $row):
+                        
+                        ?>
                             <tr>
-                                <td>Herrod Chandler</td>
-                                <td>Sales Assistant</td>
-                                <td>San Francisco</td>
+                                <td><?php echo $row['judul'];?></td>
+                                
                                 
                             </tr>
-                                       
+                            <?php
+                            endforeach:
+                        ?>        
                         </tbody>
+                      
                     </table>                             
                 </div>
             </div>           
