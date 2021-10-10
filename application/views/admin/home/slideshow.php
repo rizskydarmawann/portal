@@ -12,21 +12,31 @@
                                 <th>No</th>
                                 <th>Judul</th>
                                 <th>Foto</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         
                         <tbody>
                         <?php
+                        $no = 1;
                         foreach ($slide as $row):
                         
                         ?>
                             <tr>
+                                <td><?php echo $no++;?></td>
                                 <td><?php echo $row['judul'];?></td>
-                                
-                                
+                                <td><?php echo $row['foto'];?></td>
+                                <td>
+
+                                    <a href=""
+                                        class="badge badge-danger">Delete</a>
+                                    <a href="" type="button" data-toggle="modal"
+                                        data-target="#editMenuModal"
+                                        class="badge badge-success">Edit</a>
+                                </td>                               
                             </tr>
                             <?php
-                            endforeach:
+                            endforeach
                         ?>        
                         </tbody>
                       
