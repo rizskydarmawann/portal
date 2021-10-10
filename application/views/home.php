@@ -106,41 +106,42 @@
           <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
+        <?php
+                        
+                        foreach ($slide as $row):
+                        if ($row['id_slide']==5){
+
+                        
+                        ?>
           <div class="carousel-item active">
             <img
-              src="<?= base_url()?>assets/frontend/images/img1.jpeg"
+              src="<?php echo $row['foto'];?>"
               class="d-block w-100"
               alt="..."
             />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h5><?php echo $row['judul'];?></h5>
             </div>
           </div>
-          <div class="carousel-item">
+          <?php
+                        }else{
+                          ?>
+<div class="carousel-item item">
             <img
-              src="<?= base_url()?>assets/frontend/images/img2.jpeg"
+              src="<?php echo $row['foto'];?>"
               class="d-block w-100"
               alt="..."
             />
             <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h5><?php echo $row['judul'];?></h5>
             </div>
           </div>
-          <div class="carousel-item">
-            <img
-              src="<?= base_url()?>assets/frontend/images/img3.JPG"
-              class="d-block w-100"
-              alt="..."
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </div>
-          </div>
+                          <?php
+                        }
+
+                            endforeach
+
+                        ?>        
         </div>
         <a
           class="carousel-control-prev"

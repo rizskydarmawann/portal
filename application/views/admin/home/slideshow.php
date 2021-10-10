@@ -25,7 +25,7 @@
                             <tr>
                                 <td><?php echo $no++;?></td>
                                 <td><?php echo $row['judul'];?></td>
-                                <td><img src="<?php echo $row['foto'];?>" class="img-fluid img-thumbnai" width="40%" ></td>
+                                <td><img src="<?php echo $row['foto'];?>" class="img-fluid img-thumbnai" width="20%" ></td>
                                 <td>
 
                                     <a href=""
