@@ -25,13 +25,12 @@
                             <tr>
                                 <td><?php echo $no++;?></td>
                                 <td><?php echo $row['judul'];?></td>
-                                <td><?php echo $row['foto'];?></td>
+                                <td><img src="<?php echo $row['foto'];?>" class="img-fluid img-thumbnai" width="40%" ></td>
                                 <td>
 
                                     <a href=""
                                         class="badge badge-danger">Delete</a>
                                     <a href="" type="button" data-toggle="modal"
-                                        data-target="#editMenuModal"
                                         class="badge badge-success">Edit</a>
                                 </td>                               
                             </tr>
@@ -45,10 +44,6 @@
             </div>           
         </div>
      
-   
-
-  
-
-    
+      
 
  
