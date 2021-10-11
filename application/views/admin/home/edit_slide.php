@@ -10,7 +10,8 @@
                 <div class="row">
                 <div class="col-lg-6">
                     <?= $this->session->flashdata('message');?>
-                    <?=form_open_multipart('admin/proses_add_slideshows', 'id="add_slide"') ?>
+                    <?=form_open_multipart('admin/proses_edit_slideshows', 'id="edit_slide"') ?>
+                    <input name="id_slide" type="hidden" value="<?php echo $slider[0]['id_slide']; ?>">
                         <div class="form-group row"> 
                             <label for="judul" class="col-sm-2 col-form-label">Judul</label>
                             <div class="col-sm-10">

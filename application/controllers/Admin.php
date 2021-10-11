@@ -120,11 +120,60 @@ class Admin extends CI_Controller
     public function edit_slideshow($id_slide)
     {
 		$data['slider'] = $this->admin_model->select_slideshow($id_slide);
-		var_dump($data['slider']);
+		// var_dump($data['slider']);
 		$data['title'] = 'Edit Slide Show';
             $this->load->view('admin/themes/header');
             $this->load->view('admin/home/edit_slide', $data);
             $this->load->view('admin/themes/footer');
+    }
+
+
+    public function proses_edit_slideshows(){
+        $this->form_validation->set_rules('judul', 'Judul', 'required|trim');
+
+            if ($this->form_validation->run() == false) {
+
+                $data['title'] = 'Edit Slide Show';
+                $this->load->view('admin/themes/header');
+                $this->load->view('admin/home/edit_slide', $data);
+                $this->load->view('admin/themes/footer');
+            } else {
+
+                $id = $this->input->post('id_slide');
+                $foto = str_replace(" ","_",$_FILES['foto']['name']);
+                $url = base_url('assets/backend/upload/slider/'.$foto);
+                if(!empty($foto)) {
+                    $tujuan_file = realpath(APPPATH.'../assets/backend/upload/slider/');
+                    $konfigurasi = array(
+                        'allowed_types'	=> 'jpg|jpeg|png|bmp|JPG',
+                        'upload_path'	=> $tujuan_file,
+                        'remove_spaces'	=> TRUE,
+                        'file_name' => $foto
+                    );
+            
+                    $this->load->library('upload',$konfigurasi);
+                    $this->upload->do_upload('foto');
+                    $this->upload->data();
+            
+                    $data = array(
+                        'judul' => $this->input->post('judul'),
+                        'foto' => $url,
+                        'created_at' => date("Y-m-d H:i:s"),
+                    );
+                    $this->db->where('id_slide',$id);
+                    $this->db->update('slideshow',$data);
+                }else{
+                    $data = array(
+                        'judul' => $this->input->post('judul'),
+                        'created_at' => date("Y-m-d H:i:s"),
+                    );
+                    $this->db->where('id_slide',$id);
+                    $this->db->update('slideshow',$data);
+                }
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                Slideshow berhasil diubah !</div>');
+                redirect('admin/slideshow');
+            }
     }
 
     public function logout()

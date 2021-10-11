@@ -25,12 +25,9 @@ foreach ($slide as $row):
 ?>
                             <tr>
                                 <td><?php echo $no++; ?></td>
-                                <td><?php echo $row['judul']; ?></td>
-                                <td><img src="<?php echo $row['foto']; ?>" class="img-fluid img-thumbnai" width="20%" ></td>
-                                <td>
-                               
-                                    <a href=""
-                                        class="badge badge-danger">Delete</a>
+                                <td width="30%"><?php echo $row['judul']; ?></td>
+                                <td><img src="<?php echo $row['foto']; ?>" class="img-fluid img-thumbnai" width="40%" ></td>
+                                <td  width="5%">                                   
                                     <a href=" <?php echo base_url('admin/edit_slideshow/' . $row['id_slide']); ?>" type="button"
                                         class="badge badge-success">Edit</a>
                                 </td>
