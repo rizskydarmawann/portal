@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Okt 2021 pada 13.34
+-- Waktu pembuatan: 11 Okt 2021 pada 20.08
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 7.4.24
 
@@ -39,10 +39,11 @@ CREATE TABLE `slideshow` (
 --
 
 INSERT INTO `slideshow` (`id_slide`, `judul`, `foto`, `created_at`) VALUES
-(1, 'Sekolah Kita', '', '2021-10-10 03:51:49'),
-(2, 'Selamat Belajar', '', '2021-10-10 03:51:49'),
 (5, 'Sekolah Pertama Saya', 'http://localhost/portal/assets/backend/upload/slider/img1.jpeg', '2021-10-10 05:37:15'),
-(6, 'Sekolah Kedua Saya', 'http://localhost/portal/assets/backend/upload/slider/img2.jpeg', '2021-10-10 05:39:45');
+(6, 'Sekolah Kedua Saya', 'http://localhost/portal/assets/backend/upload/slider/img2.jpeg', '2021-10-10 05:39:45'),
+(10, 'Sekolah Ketiga Saya', 'http://localhost/portal/assets/backend/upload/slider/img3.JPG', '2021-10-11 08:31:26'),
+(11, 'Sekolah Keempat Saya', 'http://localhost/portal/assets/backend/upload/slider/img2.jpeg', '2021-10-11 11:51:36'),
+(12, 'Sekolah Kelima Saya', 'http://localhost/portal/assets/backend/upload/slider/img1.jpeg', '2021-10-11 11:52:06');
 
 -- --------------------------------------------------------
 
@@ -89,7 +90,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `slideshow`
 --
 ALTER TABLE `slideshow`
-  MODIFY `id_slide` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_slide` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

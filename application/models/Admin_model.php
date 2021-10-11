@@ -70,7 +70,7 @@ public function proses_edit_slideshows(){
 
 public function select_slideshow($id)
 {
-	$sql = $this->db->query("select * from slideshow where id = '".$id."'");
+	$sql = $this->db->query("select * from slideshow where id_slide = '".$id."'");
 	$data = $sql->result_array();
 	return $data;
 

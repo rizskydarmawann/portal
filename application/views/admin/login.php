@@ -94,17 +94,18 @@ span.psw {
 	<div id="body">
 
 
-		<form action="<?= base_url('admin/proses_login')?>" method="post">
+		<form action="<?= base_url('admin/proses_login')?>" method="post" id="form_login">
 		  <div class="imgcontainer">
 			<img src="<?= base_url()?>assets/backend/img/avatar2.png" alt="Avatar" class="avatar">
 		  </div>
 
 		  <div class="container">
 			<label for="uname"><b>Username</b></label>
-			<input type="text" placeholder="Enter Username" name="username" required>
-
+			<input type="text" placeholder="Enter Username" id="username" name="username" class="username" rel="Username" title="Ketik username disini" required>
+      
 			<label for="psw"><b>Password</b></label>
-			<input type="password" placeholder="Enter Password" name="password" required>
+			<input type="password" placeholder="Enter Password" id="username" name="password"  rel="password" title="Ketik password disini" required>
+     
 
 			<button type="submit">Login</button>
 			<label>

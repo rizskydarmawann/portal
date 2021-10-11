@@ -10,15 +10,15 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="<?= base_url()?>assets/frontend/css/bootstrap.css" />
-    <link rel="stylesheet" href="<?= base_url()?>assets/frontend/vendor/owl/owl.carousel.min.css" />
+    <link rel="stylesheet" href="<?=base_url()?>assets/frontend/css/bootstrap.css" />
+    <link rel="stylesheet" href="<?=base_url()?>assets/frontend/vendor/owl/owl.carousel.min.css" />
     <!-- <link rel="stylesheet" href="frontend/css/owl.theme.default.css" /> -->
-    <link rel="stylesheet" href="<?= base_url()?>assets/frontend/css/bootstrap-grid.css" />
-    <link rel="stylesheet" href="<?= base_url()?>assets/frontend/css/bootstrap-reboot.css" />
-    <link rel="stylesheet" href="<?= base_url()?>assets/frontend/css/style.css" />
-    <link href="<?= base_url()?>assets/frontend/vendor/icofont/icofont.min.css" rel="stylesheet" />
-    <link href="<?= base_url()?>assets/frontend/vendor/venobox/venobox.css" rel="stylesheet" />
-    <link rel="stylesheet" href="<?= base_url()?>assets/frontend/css/responsive.css" />
+    <link rel="stylesheet" href="<?=base_url()?>assets/frontend/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="<?=base_url()?>assets/frontend/css/bootstrap-reboot.css" />
+    <link rel="stylesheet" href="<?=base_url()?>assets/frontend/css/style.css" />
+    <link href="<?=base_url()?>assets/frontend/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link href="<?=base_url()?>assets/frontend/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link rel="stylesheet" href="<?=base_url()?>assets/frontend/css/responsive.css" />
   </head>
   <body>
     <!-- header -->
@@ -26,7 +26,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-12 section-header">
-            <img src="<?= base_url()?>assets/frontend/images/logo.png" alt="LOGO" />
+            <img src="<?=base_url()?>assets/frontend/images/logo.png" alt="LOGO" />
             <h1>MAGISTER</h1>
             <h1>SEKOLAH TINGGGI ILMU PELAYARAN</h1>
           </div>
@@ -42,12 +42,12 @@
         </h1>
         <nav class="nav-menu d-none d-lg-block">
           <ul>
-            <li class="active"><a href="<?= base_url()?>">Beranda</a></li>
+            <li class="active"><a href="<?=base_url()?>">Beranda</a></li>
             <li class="drop-down">
               <a href="">Tentang Kami</a>
               <ul>
-                <li><a href="<?= base_url()?>sejarah">Sejarah</a></li>
-                <li><a href="<?= base_url()?>vm">Visi dan Misi</a></li>
+                <li><a href="<?=base_url()?>sejarah">Sejarah</a></li>
+                <li><a href="<?=base_url()?>vm">Visi dan Misi</a></li>
                 <!-- <li class="drop-down">
                   <a href="#">Deep Drop Down</a>
                   <ul>
@@ -63,11 +63,11 @@
             <li class="drop-down">
               <a href="">Akademik</a>
               <ul>
-                <li><a href="<?= base_url()?>galery">Galeri</a></li>
-                <li><a href="<?= base_url()?>testimoni">Testimoni</a></li>
-                <li><a href="<?= base_url()?>animo">Animo & Daya Tampung</a></li>
-                <li><a href="<?= base_url()?>biaya">Biaya Pendidikan</a></li>
-                <li><a href="<?= base_url()?>jadwal">Jadwal Pendaftaran</a></li>
+                <li><a href="<?=base_url()?>galery">Galeri</a></li>
+                <li><a href="<?=base_url()?>testimoni">Testimoni</a></li>
+                <li><a href="<?=base_url()?>animo">Animo & Daya Tampung</a></li>
+                <li><a href="<?=base_url()?>biaya">Biaya Pendidikan</a></li>
+                <li><a href="<?=base_url()?>jadwal">Jadwal Pendaftaran</a></li>
                 <!-- <li class="drop-down">
                   <a href="#">Deep Drop Down</a>
                   <ul>
@@ -80,8 +80,8 @@
                 </li> -->
               </ul>
             </li>
-            <li><a href="<?= base_url()?>kebijakan">Kebijakan Privasi</a></li>
-            <li><a href="<?= base_url()?>kontak">Kontak</a></li>
+            <li><a href="<?=base_url()?>kebijakan">Kebijakan Privasi</a></li>
+            <li><a href="<?=base_url()?>kontak">Kontak</a></li>
           </ul>
         </nav>
       </div>
@@ -107,41 +107,40 @@
         </ol>
         <div class="carousel-inner">
         <?php
-                        
-                        foreach ($slide as $row):
-                        if ($row['id_slide']==5){
 
-                        
-                        ?>
-          <div class="carousel-item active">
-            <img
-              src="<?php echo $row['foto'];?>"
-              class="d-block w-100"
-              alt="..."
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h5><?php echo $row['judul'];?></h5>
-            </div>
-          </div>
-          <?php
-                        }else{
-                          ?>
-<div class="carousel-item item">
-            <img
-              src="<?php echo $row['foto'];?>"
-              class="d-block w-100"
-              alt="..."
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h5><?php echo $row['judul'];?></h5>
-            </div>
-          </div>
-                          <?php
-                        }
+foreach ($slide as $row):
+    if ($row['id_slide'] == 5) {
 
-                            endforeach
+        ?>
+	          <div class="carousel-item active">
+	            <img
+	              src="<?php echo $row['foto']; ?>"
+	              class="d-block w-100"
+	              alt="..."
+	            />
+	            <div class="carousel-caption d-none d-md-block">
+	              <h5><?php echo $row['judul']; ?></h5>
+	            </div>
+	          </div>
+	          <?php
+    } else {
+        ?>
+	<div class="carousel-item item">
+	            <img
+	              src="<?php echo $row['foto']; ?>"
+	              class="d-block w-100"
+	              alt="..."
+	            />
+	            <div class="carousel-caption d-none d-md-block">
+	              <h5><?php echo $row['judul']; ?></h5>
+	            </div>
+	          </div>
+	  <?php
+    }
 
-                        ?>        
+endforeach
+
+?>
         </div>
         <a
           class="carousel-control-prev"
@@ -177,32 +176,32 @@
             <div id="link" class="owl-carousel">
               <div class="figure-img">
                 <img
-                  src="<?= base_url()?>assets/frontend/images/image1.jpg"
+                  src="<?=base_url()?>assets/frontend/images/image1.jpg"
                   class="figure-img img-fluid"
                 />
               </div>
 
               <div class="figure-img">
                 <img
-                  src="<?= base_url()?>assets/frontend/images/image2.jpg"
+                  src="<?=base_url()?>assets/frontend/images/image2.jpg"
                   class="figure-img img-fluid"
                 />
               </div>
               <div class="figure-img">
                 <img
-                  src="<?= base_url()?>assets/frontend/images/image3.jpg"
+                  src="<?=base_url()?>assets/frontend/images/image3.jpg"
                   class="figure-img img-fluid"
                 />
               </div>
               <div class="figure-img">
                 <img
-                  src="<?= base_url()?>assets/frontend/images/image4.jpg"
+                  src="<?=base_url()?>assets/frontend/images/image4.jpg"
                   class="figure-img img-fluid"
                 />
               </div>
               <div class="figure-img">
                 <img
-                  src="<?= base_url()?>assets/frontend/images/image5.jpg"
+                  src="<?=base_url()?>assets/frontend/images/image5.jpg"
                   class="figure-img img-fluid"
                 />
               </div>
@@ -225,7 +224,7 @@
             <div id="news-slider" class="owl-carousel">
               <div class="news-grid">
                 <div class="news-grid-image">
-                  <img src="<?= base_url()?>assets/frontend/images/image3.jpg" />
+                  <img src="<?=base_url()?>assets/frontend/images/image3.jpg" />
                   <div class="news-grid-box">
                     <h1>19</h1>
                     <p>Sep</p>
@@ -258,7 +257,7 @@
               </div>
               <div class="news-grid">
                 <div class="news-grid-image">
-                  <img src="<?= base_url()?>assets/frontend/images/image2.jpg" />
+                  <img src="<?=base_url()?>assets/frontend/images/image2.jpg" />
                   <div class="news-grid-box">
                     <h1>19</h1>
                     <p>Sep</p>
@@ -291,7 +290,7 @@
               </div>
               <div class="news-grid">
                 <div class="news-grid-image">
-                  <img src="<?= base_url()?>assets/frontend/images/image3.jpg" />
+                  <img src="<?=base_url()?>assets/frontend/images/image3.jpg" />
                   <div class="news-grid-box">
                     <h1>19</h1>
                     <p>Sep</p>
@@ -324,7 +323,7 @@
               </div>
               <div class="news-grid">
                 <div class="news-grid-image">
-                  <img src="<?= base_url()?>assets/frontend/images/image5.jpg" />
+                  <img src="<?=base_url()?>assets/frontend/images/image5.jpg" />
                   <div class="news-grid-box">
                     <h1>19</h1>
                     <p>Sep</p>
@@ -357,7 +356,7 @@
               </div>
               <div class="news-grid">
                 <div class="news-grid-image">
-                  <img src="<?= base_url()?>assets/frontend/images/image4.jpg" />
+                  <img src="<?=base_url()?>assets/frontend/images/image4.jpg" />
                   <div class="news-grid-box">
                     <h1>19</h1>
                     <p>Sep</p>
@@ -390,7 +389,7 @@
               </div>
               <div class="news-grid">
                 <div class="news-grid-image">
-                  <img src="<?= base_url()?>assets/frontend/images/image5.jpg" />
+                  <img src="<?=base_url()?>assets/frontend/images/image5.jpg" />
                   <div class="news-grid-box">
                     <h1>19</h1>
                     <p>Sep</p>
@@ -448,10 +447,10 @@
               <div class="news-thumbnail">
                 <div
                   class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image1.jpg')"
+                  style="background-image: url('<?=base_url()?>assets/frontend/images/image1.jpg')"
                 >
                   <a
-                    href="<?= base_url()?>assets/frontend/images/image1.jpg"
+                    href="<?=base_url()?>assets/frontend/images/image1.jpg"
                     data-gall="Gallery"
                     class="venobox d-flex justify-content-center"
                   >
@@ -465,10 +464,10 @@
               <div class="news-thumbnail">
                 <div
                   class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image5.jpg')"
+                  style="background-image: url('<?=base_url()?>assets/frontend/images/image5.jpg')"
                 >
                   <a
-                    href="<?= base_url()?>assets/frontend/images/image5.jpg"
+                    href="<?=base_url()?>assets/frontend/images/image5.jpg"
                     data-gall="Gallery"
                     class="venobox d-flex justify-content-center"
                   ></a>
@@ -481,10 +480,10 @@
               <div class="news-thumbnail">
                 <div
                   class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image2.jpg')"
+                  style="background-image: url('<?=base_url()?>assets/frontend/images/image2.jpg')"
                 >
                   <a
-                    href="<?= base_url()?>assets/frontend/images/image2.jpg"
+                    href="<?=base_url()?>assets/frontend/images/image2.jpg"
                     data-gall="Gallery"
                     class="venobox d-flex justify-content-center"
                   ></a>
@@ -497,10 +496,10 @@
               <div class="news-thumbnail">
                 <div
                   class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image5.jpg')"
+                  style="background-image: url('<?=base_url()?>assets/frontend/images/image5.jpg')"
                 >
                   <a
-                    href="<?= base_url()?>assets/frontend/images/image5.jpg"
+                    href="<?=base_url()?>assets/frontend/images/image5.jpg"
                     data-gall="Gallery"
                     class="venobox d-flex justify-content-center"
                   ></a>
@@ -513,10 +512,10 @@
               <div class="news-thumbnail">
                 <div
                   class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image3.jpg')"
+                  style="background-image: url('<?=base_url()?>assets/frontend/images/image3.jpg')"
                 >
                   <a
-                    href="<?= base_url()?>assets/frontend/images/image3.jpg"
+                    href="<?=base_url()?>assets/frontend/images/image3.jpg"
                     data-gall="Gallery"
                     class="venobox d-flex justify-content-center"
                   ></a>
@@ -529,10 +528,10 @@
               <div class="news-thumbnail">
                 <div
                   class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image4.jpg')"
+                  style="background-image: url('<?=base_url()?>assets/frontend/images/image4.jpg')"
                 >
                   <a
-                    href="<?= base_url()?>assets/frontend/images/image4.jpg"
+                    href="<?=base_url()?>assets/frontend/images/image4.jpg"
                     data-gall="Gallery"
                     class="venobox d-flex justify-content-center"
                   ></a>
@@ -545,10 +544,10 @@
               <div class="news-thumbnail">
                 <div
                   class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image4.jpg')"
+                  style="background-image: url('<?=base_url()?>assets/frontend/images/image4.jpg')"
                 >
                   <a
-                    href="<?= base_url()?>assets/frontend/images/image4.jpg"
+                    href="<?=base_url()?>assets/frontend/images/image4.jpg"
                     data-gall="Gallery"
                     class="venobox d-flex justify-content-center"
                   ></a>
@@ -561,10 +560,10 @@
               <div class="news-thumbnail">
                 <div
                   class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image5.jpg')"
+                  style="background-image: url('<?=base_url()?>assets/frontend/images/image5.jpg')"
                 >
                   <a
-                    href="<?= base_url()?>assets/frontend/images/image5.jpg"
+                    href="<?=base_url()?>assets/frontend/images/image5.jpg"
                     data-gall="Gallery"
                     class="venobox d-flex justify-content-center"
                   ></a>
@@ -577,10 +576,10 @@
               <div class="news-thumbnail">
                 <div
                   class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image4.jpg')"
+                  style="background-image: url('<?=base_url()?>assets/frontend/images/image4.jpg')"
                 >
                   <a
-                    href="<?= base_url()?>assets/frontend/images/image4.jpg"
+                    href="<?=base_url()?>assets/frontend/images/image4.jpg"
                     data-gall="Gallery"
                     class="venobox d-flex justify-content-center"
                   ></a>
@@ -679,13 +678,13 @@
     </footer>
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-    <script src="<?= base_url()?>assets/frontend/js/jquery-3.3.1.min.js"></script>
+    <script src="<?=base_url()?>assets/frontend/js/jquery-3.3.1.min.js"></script>
     <!-- <script src="frontend/js/jquery.min.js"></script> -->
     <!-- <script src="frontend/js/popper.min.js"></script> -->
-    <script src="<?= base_url()?>assets/frontend/js/bootstrap.js"></script>
-    <script src="<?= base_url()?>assets/frontend/js/main.js"></script>
-    <script src="<?= base_url()?>assets/frontend/vendor/venobox/venobox.min.js"></script>
-    <script src="<?= base_url()?>assets/frontend/vendor/owl/owl.carousel.min.js"></script>
+    <script src="<?=base_url()?>assets/frontend/js/bootstrap.js"></script>
+    <script src="<?=base_url()?>assets/frontend/js/main.js"></script>
+    <script src="<?=base_url()?>assets/frontend/vendor/venobox/venobox.min.js"></script>
+    <script src="<?=base_url()?>assets/frontend/vendor/owl/owl.carousel.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function () {
         $("#news-slider").owlCarousel({

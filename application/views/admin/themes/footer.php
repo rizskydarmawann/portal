@@ -49,7 +49,14 @@
     
    <!-- Custom scripts for all pages-->
    <script src="<?= base_url()?>assets/backend/js/sb-admin-2.min.js"></script>
-
+   <script>
+            //untuk mengubah nama file image
+    $('.custom-file-input').on('change', function() {
+    let fileName = $(this).val().split('\\').pop();
+    $(this).next('.custom-file-label').addClass("selected").html(fileName);
+});
+        </script>
+      
    
    
 
