@@ -8,6 +8,7 @@ class Home extends CI_Controller {
 	{
 		$this->load->model('admin_model');
 		$data['slide'] = $this->admin_model->getallslideshows();
+		$data['link'] = $this->admin_model->getalllink();
 		$this->load->view('home', $data);
 	}
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Okt 2021 pada 20.08
+-- Waktu pembuatan: 12 Okt 2021 pada 19.18
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 7.4.24
 
@@ -24,6 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `link`
+--
+
+CREATE TABLE `link` (
+  `id_link` int(11) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `foto_link` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `link`
+--
+
+INSERT INTO `link` (`id_link`, `url`, `foto_link`, `created_at`) VALUES
+(3, 'https://www.facebook.com/', 'http://localhost/portal/assets/backend/upload/link/cara-menghapus-akun-facebook.jpeg', '2021-10-12 12:11:40'),
+(6, 'https://www.tokopedia.com/', 'http://localhost/portal/assets/backend/upload/link/tokopedia.jpg', '2021-10-12 12:00:03');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `slideshow`
 --
 
@@ -39,7 +60,7 @@ CREATE TABLE `slideshow` (
 --
 
 INSERT INTO `slideshow` (`id_slide`, `judul`, `foto`, `created_at`) VALUES
-(5, 'Sekolah Pertama Saya', 'http://localhost/portal/assets/backend/upload/slider/img1.jpeg', '2021-10-10 05:37:15'),
+(5, 'Sekolah Pertama Saya Saya', 'http://localhost/portal/assets/backend/upload/slider/img1.jpeg', '2021-10-11 18:08:09'),
 (6, 'Sekolah Kedua Saya', 'http://localhost/portal/assets/backend/upload/slider/img2.jpeg', '2021-10-10 05:39:45'),
 (10, 'Sekolah Ketiga Saya', 'http://localhost/portal/assets/backend/upload/slider/img3.JPG', '2021-10-11 08:31:26'),
 (11, 'Sekolah Keempat Saya', 'http://localhost/portal/assets/backend/upload/slider/img2.jpeg', '2021-10-11 11:51:36'),
@@ -71,6 +92,12 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `status`) VALUES
 --
 
 --
+-- Indeks untuk tabel `link`
+--
+ALTER TABLE `link`
+  ADD PRIMARY KEY (`id_link`);
+
+--
 -- Indeks untuk tabel `slideshow`
 --
 ALTER TABLE `slideshow`
@@ -87,10 +114,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `link`
+--
+ALTER TABLE `link`
+  MODIFY `id_link` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT untuk tabel `slideshow`
 --
 ALTER TABLE `slideshow`
-  MODIFY `id_slide` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_slide` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

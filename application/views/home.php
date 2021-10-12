@@ -171,40 +171,24 @@ endforeach
             <h5>LINK TERKAIT</h5>
           </div>
         </div>
+       
         <div class="row">
           <div class="col-12">
             <div id="link" class="owl-carousel">
-              <div class="figure-img">
+            <?php foreach ($link as $row):
+        ?>
+              <div class="figure-img"><a href="<?php echo $row['url']; ?>">
                 <img
-                  src="<?=base_url()?>assets/frontend/images/image1.jpg"
+                  src="<?php echo $row['foto_link']; ?>"
                   class="figure-img img-fluid"
                 />
+                </a>
               </div>
-
-              <div class="figure-img">
-                <img
-                  src="<?=base_url()?>assets/frontend/images/image2.jpg"
-                  class="figure-img img-fluid"
-                />
-              </div>
-              <div class="figure-img">
-                <img
-                  src="<?=base_url()?>assets/frontend/images/image3.jpg"
-                  class="figure-img img-fluid"
-                />
-              </div>
-              <div class="figure-img">
-                <img
-                  src="<?=base_url()?>assets/frontend/images/image4.jpg"
-                  class="figure-img img-fluid"
-                />
-              </div>
-              <div class="figure-img">
-                <img
-                  src="<?=base_url()?>assets/frontend/images/image5.jpg"
-                  class="figure-img img-fluid"
-                />
-              </div>
+              <?php
+            endforeach
+            ?>
+   
+    
             </div>
           </div>
         </div>
