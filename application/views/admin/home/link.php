@@ -6,6 +6,9 @@
             <h5 class="h3 mb-4 text-gray-800"><?=$title;?></h5>
             <div class="card shadow mb-4">
                 <div class="card-body">
+                <div class=" pb-3 d-flex flex-row-reverse">
+  <a href=" <?php echo base_url('admin/tambah_link'); ?>" class=" btn btn-primary">tambah</a>
+</div>
                 <?= $this->session->flashdata('message');?>
                     <table class="table table-striped table-bordered table-sm"  width="100%" cellspacing="0">
                         <thead>
