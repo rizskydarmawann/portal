@@ -223,4 +223,30 @@ public function getalltestimoni()
 }
 
 
+public function select_biaya()
+{
+	$sql = $this->db->query("select * from akademik where id = '1'");
+	$data = $sql->result_array();
+	return $data;
+
+}
+
+
+public function select_animo()
+{
+	$sql = $this->db->query("select * from akademik where id = '3'");
+	$data = $sql->result_array();
+	return $data;
+
+}
+
+public function select_jadwal()
+{
+	$sql = $this->db->query("select * from akademik where id = '2'");
+	$data = $sql->result_array();
+	return $data;
+
+}
+
+
 } ?>

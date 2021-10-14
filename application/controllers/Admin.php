@@ -447,4 +447,36 @@ public function edit_privasi()
         $this->load->view('admin/themes/footer');
     }
 
+    public function animo()
+    {
+        $data['title'] = 'Animo dan Daya Tampung';
+        $this->load->model('Admin_model','animo');
+        $data['animo'] = $this->animo->select_animo();
+        $this->load->view('admin/themes/header');
+        $this->load->view('admin/akademik/animo', $data);
+        $this->load->view('admin/themes/footer');
+    }
+
+    
+    public function biaya()
+    {
+        $data['title'] = 'Biaya Pendidikan';
+        $this->load->model('Admin_model','biaya');
+        $data['biaya'] = $this->biaya->select_biaya();
+        $this->load->view('admin/themes/header');
+        $this->load->view('admin/akademik/biaya', $data);
+        $this->load->view('admin/themes/footer');
+    }
+
+    
+    public function jadwal()
+    {
+        $data['title'] = 'Jadwal Pendaftaran';
+        $this->load->model('Admin_model','jadwal');
+        $data['jadwal'] = $this->jadwal->select_jadwal();
+        $this->load->view('admin/themes/header');
+        $this->load->view('admin/akademik/jadwal', $data);
+        $this->load->view('admin/themes/footer');
+    }
+
 }
