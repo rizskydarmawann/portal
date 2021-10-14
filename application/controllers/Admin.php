@@ -410,4 +410,20 @@ public function edit_privasi()
         redirect(base_url('admin'));
     }
 
+    
+    
+    public function kontak()
+    {
+
+        $data['title'] = 'Kontak';
+        $this->load->model('Admin_model', 'kontak');
+        $data['kontak'] = $this->kontak->getallcontact();
+        $this->load->view('admin/themes/header');
+        $this->load->view('admin/kontak/content',$data);
+        $this->load->view('admin/themes/footer');
+    }
+
+
+
+
 }

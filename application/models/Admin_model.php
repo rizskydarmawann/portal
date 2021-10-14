@@ -195,4 +195,14 @@ public function select_privasi()
 }
 
 
+public function getallcontact()
+{
+	$sql = $this->db->query("select * from contact ");
+	$data = $sql->result_array();
+	return $data;
+
+}
+
+
+
 } ?>
