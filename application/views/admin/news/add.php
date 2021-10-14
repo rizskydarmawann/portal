@@ -38,10 +38,9 @@
                             Keterangan
                         </div>
                         <div class="col-sm-10">
-                            <div class="custom-file">
                                 <textarea class="form-control" style="height:300px" name="description">
                                 </textarea>
-                            </div>
+                        
                         </div>
                         </div>
 
