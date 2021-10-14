@@ -305,6 +305,105 @@ class Admin extends CI_Controller
             }
     }
 
+
+    
+    public function news()
+    {
+
+        $data['title'] = 'News';
+        $this->load->model('Admin_model', 'news');
+        $data['news'] = $this->news->getallnews();
+        $this->load->view('admin/themes/header');
+        $this->load->view('admin/news/content',$data);
+        $this->load->view('admin/themes/footer');
+    }
+
+
+    
+    public function add_news()
+    {
+
+        $data['title'] = 'Add News';
+        $this->load->view('admin/themes/header');
+        $this->load->view('admin/news/add',$data);
+        $this->load->view('admin/themes/footer');
+    }
+
+
+    
+
+	public function proses_add_news() {
+
+	
+		$this->load->model('Admin_model','news');
+		$this->news->insert_news();
+		redirect(base_url('admin/news'));
+	}
+
+
+    
+    public function edit_news()
+    {
+        $data['title'] = 'Edit News';
+        $id = $this->uri->segment(3);
+        $this->load->model('Admin_model','news');
+		$data['news'] = $this->news->select_news($id);
+        $this->load->view('admin/themes/header');
+        $this->load->view('admin/news/edit',$data);
+        $this->load->view('admin/themes/footer');
+    }
+
+    
+    
+
+	public function proses_edit_news() {
+
+	
+		$this->load->model('Admin_model','news');
+		$this->news->edit_news();
+		redirect(base_url('admin/news'));
+	}
+
+
+
+    
+public function edit_sejarah()
+{
+    $data['title'] = 'Edit Sejarah';
+    $this->load->model('Admin_model','sejarah');
+    $data['sejarah'] = $this->sejarah->select_sejarah();
+    $this->load->view('admin/themes/header');
+    $this->load->view('admin/tentangkami/sejarah',$data);
+    $this->load->view('admin/themes/footer');
+}
+
+
+
+
+public function edit_vm()
+{
+    $data['title'] = 'Edit Visi Misi';
+    $this->load->model('Admin_model','vm');
+    $data['vm'] = $this->vm->select_vm();
+    $this->load->view('admin/themes/header');
+    $this->load->view('admin/tentangkami/vm',$data);
+    $this->load->view('admin/themes/footer');
+}
+
+
+public function edit_privasi()
+{
+    $data['title'] = 'Edit Privasi';
+    $this->load->model('Admin_model','privasi');
+    $data['privasi'] = $this->privasi->select_privasi();
+    $this->load->view('admin/themes/header');
+    $this->load->view('admin/tentangkami/privasi',$data);
+    $this->load->view('admin/themes/footer');
+}
+
+
+
+
     public function logout()
     {
         $this->session->sess_destroy();

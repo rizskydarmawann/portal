@@ -58,5 +58,141 @@ public function select_link($id)
 
 }
 
+public function getallnews()
+{
+	$sql = $this->db->query("select * from news")->result_array();
+	return $sql;
+
+}
+
+
+public function insert_news(){
+
+	$foto = str_replace(" ", "_", $_FILES['foto']['name']);
+	$url = base_url('assets/backend/upload/news/' . $foto);
+	if (!empty($foto)) {
+		$tujuan_file = realpath(APPPATH . '../assets/backend/upload/news/');
+		$konfigurasi = array(
+			'allowed_types' => 'jpg|jpeg|png|bmp|JPG',
+			'upload_path' => $tujuan_file,
+			'remove_spaces' => true,
+			'file_name' => $foto,
+		);
+
+		$this->load->library('upload', $konfigurasi);
+		$this->upload->do_upload('foto');
+		$this->upload->data();
+
+		$data = array(
+			'title' => $this->input->post('title'),
+			'description' => $this->input->post('description'),
+			'foto' => $url,
+			'created_at' => date("Y-m-d H:i:s"),
+		);
+		$this->db->insert('news', $data);
+
+	} else {
+
+	
+		$data = array(
+			'title' => $this->input->post('title'),
+			'description' => $this->input->post('description'),
+			'created_at' => date("Y-m-d H:i:s"),
+		);
+		$this->db->insert('news', $data);
+
+	}
+	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+	News berhasil ditambahkan !</div>');
+	redirect('admin/news');
+
+}
+
+
+public function select_news($id)
+{
+	$sql = $this->db->query("select * from news where id_news = '".$id."'");
+	$data = $sql->result_array();
+	return $data;
+
+}
+
+
+public function edit_news(){
+
+	$id = $this->input->post('id_news');
+	$foto = str_replace(" ", "_", $_FILES['foto']['name']);
+	$url = base_url('assets/backend/upload/news/' . $foto);
+	if (!empty($foto)) {
+		$tujuan_file = realpath(APPPATH . '../assets/backend/upload/news/');
+		$konfigurasi = array(
+			'allowed_types' => 'jpg|jpeg|png|bmp|JPG',
+			'upload_path' => $tujuan_file,
+			'remove_spaces' => true,
+			'file_name' => $foto,
+		);
+
+		$this->load->library('upload', $konfigurasi);
+		$this->upload->do_upload('foto');
+		$this->upload->data();
+
+		$data = array(
+			'title' => $this->input->post('title'),
+			'description' => $this->input->post('description'),
+			'foto' => $url,
+			'created_at' => date("Y-m-d H:i:s"),
+		);
+
+		$this->db->where('id_news',$id);
+		$this->db->update('news', $data);
+
+	} else {
+
+	
+		$data = array(
+			'title' => $this->input->post('title'),
+			'description' => $this->input->post('description'),
+			'created_at' => date("Y-m-d H:i:s"),
+		);
+
+		$this->db->where('id_news',$id);
+		$this->db->update('news', $data);
+
+	}
+	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+	News berhasil diubah !</div>');
+	redirect('admin/news');
+
+
+}
+
+
+
+
+public function select_sejarah()
+{
+	$sql = $this->db->query("select * from tentangkami where id = '1'");
+	$data = $sql->result_array();
+	return $data;
+
+}
+
+
+public function select_vm()
+{
+	$sql = $this->db->query("select * from tentangkami where id = '2'");
+	$data = $sql->result_array();
+	return $data;
+
+}
+
+public function select_privasi()
+{
+	$sql = $this->db->query("select * from tentangkami where id = '3'");
+	$data = $sql->result_array();
+	return $data;
+
+}
+
 
 } ?>

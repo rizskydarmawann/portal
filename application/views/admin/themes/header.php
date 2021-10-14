@@ -52,10 +52,59 @@
  </li>
 
  <li class="nav-item">
-   <a class="nav-link pb-0" href="<?= base_url('admin/dashboard')?>">
+   <a class="nav-link pb-0" href="<?= base_url('admin/news')?>">
    <i class="fas fa-fw fa-newspaper"></i>
     <span>News</span></a>  
  </li>
+
+ <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTentang"
+        aria-expanded="true" aria-controls="collapseTentang">
+        <i class="fas fa-fw fa-folder"></i>
+        <span>Tentang Kami</span>
+    </a>
+    <div id="collapseTentang" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Pages:</h6>
+            <a class="collapse-item" href="<?= base_url('admin/edit_sejarah') ?>">Sejarah</a>
+            <a class="collapse-item" href="<?= base_url('admin/edit_vm') ?>"> Visi Misi </a>
+        </div>
+    </div>
+</li>
+
+
+
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAkademik"
+        aria-expanded="true" aria-controls="collapseAkademik">
+        <i class="fas fa-fw fa-folder"></i>
+        <span>Akademik</span>
+    </a>
+    <div id="collapseAkademik" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Pages:</h6>
+            <a class="collapse-item" href="<?= base_url('admin/gallery') ?>">Gallery</a>
+            <a class="collapse-item" href="<?= base_url('admin/testimoni') ?>"> Testimoni </a>
+            <a class="collapse-item" href="<?= base_url('admin/animo') ?>"> Animo & Daya Tampung</a>
+            <a class="collapse-item" href="<?= base_url('admin/biaya') ?>"> Biaya Pendidikan</a>
+            <a class="collapse-item" href="<?= base_url('admin/jadwal') ?>"> Jadwal </a>
+        </div>
+    </div>
+</li>
+
+<li class="nav-item">
+   <a class="nav-link pb-0" href="<?= base_url('admin/edit_privasi')?>">
+   <i class="fas fa-fw fa-info"></i>
+    <span>Kebijakan Privasi</span></a>  
+ </li>
+
+
+ <li class="nav-item">
+   <a class="nav-link pb-0" href="<?= base_url('admin/kontak')?>">
+   <i class="fas fa-fw fa-envelope"></i>
+    <span>Kontak</span></a>  
+ </li>
+
 
 <hr class="sidebar-divider mt-3">
 
