@@ -171,7 +171,7 @@ public function edit_news(){
 
 public function select_sejarah()
 {
-	$sql = $this->db->query("select * from tentangkami where id = '1'");
+	$sql = $this->db->query("select * from aboutus where id = '1'");
 	$data = $sql->result_array();
 	return $data;
 
@@ -180,7 +180,7 @@ public function select_sejarah()
 
 public function select_vm()
 {
-	$sql = $this->db->query("select * from tentangkami where id = '2'");
+	$sql = $this->db->query("select * from aboutus where id = '2'");
 	$data = $sql->result_array();
 	return $data;
 
@@ -188,7 +188,7 @@ public function select_vm()
 
 public function select_privasi()
 {
-	$sql = $this->db->query("select * from tentangkami where id = '3'");
+	$sql = $this->db->query("select * from aboutus where id = '3'");
 	$data = $sql->result_array();
 	return $data;
 
