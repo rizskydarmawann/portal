@@ -9,7 +9,7 @@
                     
                 <div class="row">
                     
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <?= $this->session->flashdata('message');?>
                     
                     <?=form_open_multipart('admin/proses_edit_jadwal', 'id="edit_jadwal"') ?>
@@ -21,11 +21,10 @@
                             Keterangan
                         </div>
                         <div class="col-sm-10">
-                            <div class="custom-file">
                                 <textarea class="form-control" style="height:300px" name="description">
                                 <?= $jadwal[0]['description']?>
                                 </textarea>
-                            </div>
+                            
                         </div>
                         </div>
 
