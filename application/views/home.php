@@ -19,6 +19,14 @@
     <link href="<?=base_url()?>assets/frontend/vendor/icofont/icofont.min.css" rel="stylesheet" />
     <link href="<?=base_url()?>assets/frontend/vendor/venobox/venobox.css" rel="stylesheet" />
     <link rel="stylesheet" href="<?=base_url()?>assets/frontend/css/responsive.css" />
+    <style>
+    #panorama {
+        width: 100%;
+        height: 500px;
+    }
+    </style>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
   </head>
   <body>
     <!-- header -->
@@ -163,7 +171,31 @@ endforeach
       </div>
     </div>
     <!-- Corusel akhir -->
+
+    <!-- Panorama -->
+   
+    <section class="section-link p-5">
+      <div class="container">
+        <div class="row mb-3">
+          <div class="col-12">
+            <h5>IMAGE 360</h5>
+          </div>
+        </div>
+       
+        <div class="row">
+          <div class="col-12">
+            <div id="panorama"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- end of panorama -->
     <!-- link terkait -->
+
+
+    
     <section class="section-link p-5">
       <div class="container">
         <div class="row mb-3">
@@ -719,6 +751,12 @@ endforeach
           },
         },
       });
+    </script>
+    <script>
+    pannellum.viewer('panorama', {
+        "type": "equirectangular",
+        "panorama": "https://pannellum.org/images/alma.jpg"
+    });
     </script>
   </body>
 </html>
