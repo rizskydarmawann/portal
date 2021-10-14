@@ -204,5 +204,23 @@ public function getallcontact()
 }
 
 
+public function getallgallery()
+{
+	$sql = $this->db->query("select * from gallery ");
+	$data = $sql->result_array();
+	return $data;
+
+}
+
+
+
+public function getalltestimoni()
+{
+	$sql = $this->db->query("select * from testimonial ");
+	$data = $sql->result_array();
+	return $data;
+
+}
+
 
 } ?>

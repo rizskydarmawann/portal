@@ -424,6 +424,27 @@ public function edit_privasi()
     }
 
 
+    public function gallery()
+    {
 
+        $data['title'] = 'Gallery';
+        $this->load->model('Admin_model', 'gallery');
+        $data['gallery'] = $this->gallery->getallgallery();
+        $this->load->view('admin/themes/header');
+        $this->load->view('admin/gallery/content',$data);
+        $this->load->view('admin/themes/footer');
+    }
+
+
+    public function testimoni()
+    {
+
+        $data['title'] = 'Testimoni';
+        $this->load->model('Admin_model', 'testimoni');
+        $data['testimoni'] = $this->testimoni->getalltestimoni();
+        $this->load->view('admin/themes/header');
+        $this->load->view('admin/testimoni/content',$data);
+        $this->load->view('admin/themes/footer');
+    }
 
 }
