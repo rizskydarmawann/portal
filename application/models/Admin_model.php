@@ -102,9 +102,7 @@ public function insert_news(){
 		$this->db->insert('news', $data);
 
 	}
-	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-	News berhasil ditambahkan !</div>');
-	redirect('admin/news');
+
 
 }
 
@@ -159,9 +157,7 @@ public function edit_news(){
 		$this->db->update('news', $data);
 
 	}
-	$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-	News berhasil diubah !</div>');
-	redirect('admin/news');
+	
 
 
 }
@@ -212,6 +208,94 @@ public function getallgallery()
 
 }
 
+
+
+
+public function insert_gallery(){
+
+	$foto = str_replace(" ", "_", $_FILES['foto']['name']);
+	$url = base_url('assets/backend/upload/gallery/' . $foto);
+	if (!empty($foto)) {
+		$tujuan_file = realpath(APPPATH . '../assets/backend/upload/gallery/');
+		$konfigurasi = array(
+			'allowed_types' => 'jpg|jpeg|png|bmp|JPG',
+			'upload_path' => $tujuan_file,
+			'remove_spaces' => true,
+			'file_name' => $foto,
+		);
+
+		$this->load->library('upload', $konfigurasi);
+		$this->upload->do_upload('foto');
+		$this->upload->data();
+
+		$data = array(
+			'title' => $this->input->post('title'),
+			'foto' => $url,
+		);
+		$this->db->insert('gallery', $data);
+
+	} else {
+
+	
+		$data = array(
+			'title' => $this->input->post('title'),
+		);
+		$this->db->insert('gallery', $data);
+
+	}
+	
+}
+
+
+public function select_gallery($id)
+{
+	$sql = $this->db->query("select * from gallery where id = '".$id."'");
+	$data = $sql->result_array();
+	return $data;
+
+}
+
+
+public function edit_gallery(){
+
+	$id = $this->input->post('id');
+	$foto = str_replace(" ", "_", $_FILES['foto']['name']);
+	$url = base_url('assets/backend/upload/gallery/' . $foto);
+	if (!empty($foto)) {
+		$tujuan_file = realpath(APPPATH . '../assets/backend/upload/gallery/');
+		$konfigurasi = array(
+			'allowed_types' => 'jpg|jpeg|png|bmp|JPG',
+			'upload_path' => $tujuan_file,
+			'remove_spaces' => true,
+			'file_name' => $foto,
+		);
+
+		$this->load->library('upload', $konfigurasi);
+		$this->upload->do_upload('foto');
+		$this->upload->data();
+
+		$data = array(
+			'title' => $this->input->post('title'),
+			'foto' => $url,
+		);
+
+		$this->db->where('id',$id);
+		$this->db->update('gallery', $data);
+
+	} else {
+
+	
+		$data = array(
+			'title' => $this->input->post('title'),
+		);
+
+		$this->db->where('id',$id);
+		$this->db->update('gallery', $data);
+
+	}
+
+
+}
 
 
 public function getalltestimoni()

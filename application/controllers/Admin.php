@@ -337,7 +337,9 @@ class Admin extends CI_Controller
 	
 		$this->load->model('Admin_model','news');
 		$this->news->insert_news();
-		redirect(base_url('admin/news'));
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">News berhasil ditambahkan !</div>');
+        redirect('admin/news');
+       
 	}
 
 
@@ -361,6 +363,7 @@ class Admin extends CI_Controller
 	
 		$this->load->model('Admin_model','news');
 		$this->news->edit_news();
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">News berhasil diubah !</div>');
 		redirect(base_url('admin/news'));
 	}
 
@@ -462,6 +465,57 @@ public function proses_edit_privasi(){
         $this->load->view('admin/gallery/content',$data);
         $this->load->view('admin/themes/footer');
     }
+
+    
+    public function add_gallery()
+    {
+
+        $data['title'] = 'Add Gallery';
+        $this->load->view('admin/themes/header');
+        $this->load->view('admin/gallery/add',$data);
+        $this->load->view('admin/themes/footer');
+    }
+
+
+    
+
+	public function proses_add_gallery() {
+
+		$this->load->model('Admin_model','gallery');
+		$this->gallery->insert_gallery();
+		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Gallery berhasil ditambahkan !</div>');
+            redirect('admin/gallery');
+
+	}
+
+
+    
+    public function edit_gallery()
+    {
+        $data['title'] = 'Edit Gallery';
+        $id = $this->uri->segment(3);
+        $this->load->model('Admin_model','gallery');
+		$data['gallery'] = $this->gallery->select_gallery($id);
+        $this->load->view('admin/themes/header');
+        $this->load->view('admin/gallery/edit',$data);
+        $this->load->view('admin/themes/footer');
+    }
+
+    
+    
+    
+
+	public function proses_edit_gallery() {
+
+	
+		$this->load->model('Admin_model','gallery');
+		$this->gallery->edit_gallery();
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Gallery berhasil diubah !</div>');
+        redirect('admin/gallery');
+	}
+
+
+    
 
 
     public function testimoni()

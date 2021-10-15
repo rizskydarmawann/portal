@@ -12,7 +12,7 @@
                 <div class="col-lg-8">
                     <?= $this->session->flashdata('message');?>
                     
-                    <?=form_open_multipart('admin/proses_add_news', 'id="add_news"') ?>
+                    <?=form_open_multipart('admin/proses_add_gallery', 'id="add_gallery"') ?>
                         <div class="form-group row">
                             <label for="url" class="col-sm-2 col-form-label">Title</label>
                             <div class="col-sm-10">
@@ -29,18 +29,6 @@
                                 <input type="file" class="custom-file-input"  name="foto" id="foto" />
                                 <label class="custom-file-label" for="foto">Pilih Gambar</label>
                                 
-                            </div>
-                        </div>
-                        </div>
-
-                        <div class="form-group row">
-                        <div class="col-sm-2">
-                            Keterangan
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="custom-file">
-                                <textarea class="form-control" style="height:300px" name="description">
-                                </textarea>
                             </div>
                         </div>
                         </div>
