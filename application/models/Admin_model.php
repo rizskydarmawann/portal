@@ -249,4 +249,83 @@ public function select_jadwal()
 }
 
 
+public function proses_edit_vm(){
+
+	$data = array(
+		'description' => $this->input->post('description')
+	);
+
+	$this->db->where('id',2);
+	$this->db->update('aboutus', $data);
+
+}
+
+
+public function proses_edit_sejarah(){
+
+	$data = array(
+		'description' => $this->input->post('description')
+	);
+
+	$this->db->where('id',1);
+	$this->db->update('aboutus', $data);
+
+}
+
+
+
+
+public function proses_edit_privasi(){
+
+	$data = array(
+		'description' => $this->input->post('description')
+	);
+
+	$this->db->where('id',3);
+	$this->db->update('aboutus', $data);
+
+}
+
+
+
+
+public function proses_edit_biaya(){
+
+	$data = array(
+		'description' => $this->input->post('description')
+	);
+
+	$this->db->where('id',1);
+	$this->db->update('akademik', $data);
+
+}
+
+
+
+public function proses_edit_animo(){
+
+	$data = array(
+		'description' => $this->input->post('description')
+	);
+
+	$this->db->where('id',3);
+	$this->db->update('akademik', $data);
+
+}
+
+
+
+public function proses_edit_jadwal(){
+
+	$data = array(
+		'description' => $this->input->post('description')
+	);
+
+	$this->db->where('id',2);
+	$this->db->update('akademik', $data);
+
+}
+
+
+
 } ?>

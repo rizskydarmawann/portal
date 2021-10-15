@@ -379,6 +379,16 @@ public function edit_sejarah()
 
 
 
+public function proses_edit_sejarah(){
+
+    $this->load->model('Admin_model','sejarah');
+    $this->sejarah->proses_edit_sejarah();
+    redirect(base_url('admin/edit_sejarah'));
+
+
+}
+
+
 
 public function edit_vm()
 {
@@ -388,6 +398,16 @@ public function edit_vm()
     $this->load->view('admin/themes/header');
     $this->load->view('admin/tentangkami/vm',$data);
     $this->load->view('admin/themes/footer');
+}
+
+
+public function proses_edit_vm(){
+
+	    $this->load->model('Admin_model','vm');
+		$this->vm->proses_edit_vm();
+		redirect(base_url('admin/edit_vm'));
+
+
 }
 
 
@@ -402,6 +422,14 @@ public function edit_privasi()
 }
 
 
+public function proses_edit_privasi(){
+
+    $this->load->model('Admin_model','privasi');
+    $this->privasi->proses_edit_privasi();
+    redirect(base_url('admin/edit_privasi'));
+
+
+}
 
 
     public function logout()
@@ -457,6 +485,18 @@ public function edit_privasi()
         $this->load->view('admin/themes/footer');
     }
 
+
+    
+public function proses_edit_animo(){
+
+    $this->load->model('Admin_model','animo');
+    $this->animo->proses_edit_animo();
+    redirect(base_url('admin/animo'));
+
+
+}
+
+
     
     public function biaya()
     {
@@ -469,6 +509,18 @@ public function edit_privasi()
     }
 
     
+       
+public function proses_edit_biaya(){
+
+    $this->load->model('Admin_model','biaya');
+    $this->biaya->proses_edit_biaya();
+    redirect(base_url('admin/biaya'));
+
+
+}
+
+
+
     public function jadwal()
     {
         $data['title'] = 'Jadwal Pendaftaran';
@@ -478,5 +530,17 @@ public function edit_privasi()
         $this->load->view('admin/akademik/jadwal', $data);
         $this->load->view('admin/themes/footer');
     }
+
+           
+public function proses_edit_jadwal(){
+
+    $this->load->model('Admin_model','jadwal');
+    $this->jadwal->proses_edit_jadwal();
+    redirect(base_url('admin/jadwal'));
+
+
+}
+
+
 
 }
