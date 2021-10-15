@@ -38,13 +38,13 @@
     <div class="menus">
       <div class="container d-flex align-items-center">
         <h1 class="logo mr-auto navbar-brand">
-          <a href="<?= base_url()?>">STIP</a>
+          <a href="<?= base_url();?>">STIP</a>
         </h1>
         <nav class="nav-menu d-none d-lg-block">
           <ul>
             <li class="active"><a href="<?= base_url()?>">Beranda</a></li>
             <li class="drop-down">
-              <a href="<?= base_url()?>tentang">Tentang Kami</a>
+              <a href="#">Tentang Kami</a>
               <ul>
                 <li><a href="<?= base_url()?>sejarah">Sejarah</a></li>
                 <li><a href="<?= base_url()?>vm">Visi dan Misi</a></li>
@@ -88,55 +88,159 @@
     </div>
 
     <!-- navbar -->
-    <!-- content -->
-    <section class="section-galery news-menu">
+
+    <section class="section-detail-news">
       <div class="container">
-        <div class="section-title">
-          <span>News</span>
-          <h2>News</h2>
-        </div>
-        <div class="row">
-
-        <?php 
-            $jml = count($news);
-            for($i=0;$i<$jml;$i++){
-            ?>
-
-          <div class="col-lg-6 col-md-6 col-sm-2">
-            <div class="news-grid">
-              <div class="news-grid-image">
-                <img src="<?= $news[$i]['foto'];?>" />
-                <div class="news-grid-box">
-                  <h1>19</h1>
-                  <p>Sep</p>
-                </div>
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+            <div class="news-grid-txt">
+              <span>Berita Stip</span>
+              <h2>
+              <?= $news[0]['title']?>
+              </h2>
+              <ul>
+                <li>
+                  <i class="icofont-calendar" aria-hidden="true"></i> <?= $news[0]['created_at']?>
+                </li>
+                <li>
+                  <i class="icofont-ui-user" aria-hidden="true"></i> Admin
+                </li>
+                <li><i class="icofont-eye" aria-hidden="true"></i> 0</li>
+              </ul>
+            </div>
+            <div class="post-sharing text-center">
+              <ul class="list-inline">
+                <li>
+                  <button
+                    onClick="window.open('http://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.developphp.com%2Fvideo%2FJavaScript%2FTrigger-CSS-Transitions-to-Control-Animations','sharer','toolbar=0,status=0,width=580,height=400');"
+                    title="Share on Facebook"
+                    class="fb-button btn"
+                  >
+                    <i class="icofont-facebook"></i>
+                    Share on Facebook
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick="window.open('http://www.twitter.com/intent/tweet?url=https%3A%2F%2Fwww.developphp.com%2Fvideo%2FJavaScript%2FTrigger-CSS-Transitions-to-Control-Animations&amp;text=JavaScript - Trigger CSS Transitions to Control Animations','tweety','toolbar=0,status=0,width=550,height=450');"
+                    title="Tweet this"
+                    class="tw-button btn"
+                  >
+                    <i class="icofont-twitter"></i>
+                    <span class="down-mobile">Tweet on Twitter</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick="window.location='mailto:?subject=JavaScript - Trigger CSS Transitions to Control Animations&body=Hi, I thought you might like to see this: %0D%0Ahttps://www.developphp.com/video/JavaScript/Trigger-CSS-Transitions-to-Control-Animations';"
+                    title="Send this to an email contact"
+                    class="gp-button btn"
+                  >
+                    <i class="icofont-email"></i> Gmail
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <!-- end post-sharing -->
+            <div class="single-post-media pt-5">
+              <img src="frontend/images/image3.jpg" alt="" class="img-fluid" />
+            </div>
+            <!-- end media -->
+            <div class="blog-content">
+              <div class="pp">
+              <?= $news[0]['description']?>
               </div>
-              <div class="news-grid-txt">
-                <span>Berita Stip</span>
-                <h2> <?= $news[$i]['title'];?> </h2>
-                <ul>
-                  <li>
-                    <i class="icofont-calendar" aria-hidden="true"></i> <?= $news[$i]['created_at'];?>
-                  </li>
-                  <li><i class="icofont-eye" aria-hidden="true"></i> 0</li>
-                  <li>
-                    <i class="icofont-ui-user" aria-hidden="true"></i> Admin
-                  </li>
-                </ul>
-                <div class="news-over">
-                <?= $news[$i]['description'];?>
+              <!-- end pp -->
+
+              <img
+                src="<?= $news[0]['foto']?>"
+                alt=""
+                class="img-fluid img-fullwidth"
+              />
+
+              <div class="pp">
+              <?= $news[0]['description']?>
+              </div>
+              <!-- end pp -->
+            </div>
+            <!-- end content -->
+            <hr class="invis" />
+
+            <div class="custombox clearfix">
+              <h4 class="small-title">0 Comments</h4>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="comments-list">
+                    
+                  <div class="media">
+                      <a class="media-left" href="#">
+                        <img
+                          src="frontend/images/2.png"
+                          alt=""
+                          class="rounded-circle"
+                        />
+                      </a>
+                      <div class="media-body">
+                        <h4 class="media-heading user_name">
+                          Amanda Martines <small>5 days ago</small>
+                        </h4>
+                        <p>
+                          Exercitation photo booth stumptown tote bag Banksy,
+                          elit small batch freegan sed. Craft beer elit seitan
+                          exercitation, photo booth et 8-bit kale chips proident
+                          chillwave deep v laborum. Aliquip veniam delectus,
+                          Marfa eiusmod Pinterest in do umami readymade swag.
+                          Selfies iPhone Kickstarter, drinking vinegar jean.
+                        </p>
+                        <a href="#" class="btn btn-primary btn-sm">Reply</a>
+                      </div>
+                    </div>
+                    
+                  </div>
                 </div>
-                <div class="dropdown-divider"></div>
-                <a href="<?= base_url('detailberita/show/'.$news[$i]['id_news'])?>">Read More...</a>
+                <!-- end col -->
+              </div>
+              <!-- end row -->
+            </div>
+            <!-- end custom-box -->
+
+            <hr class="invis" />
+
+            <div class="custombox clearfix">
+              <h4 class="small-title">Leave a Reply</h4>
+              <div class="row">
+                <div class="col-lg-12">
+                  <form class="form-wrapper">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Your name"
+                    />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Email address"
+                    />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Website"
+                    />
+                    <textarea
+                      class="form-control"
+                      placeholder="Your comment"
+                    ></textarea>
+                    <button type="submit" class="btn btn-primary">
+                      Submit Comment
+                    </button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-        <?php } ?>
         </div>
       </div>
     </section>
-    <!-- content -->
-
     <footer class="section-footer mb-4 border-top">
       <div class="container pt-5 pb-5">
         <div class="row justify-content-center">

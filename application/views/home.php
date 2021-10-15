@@ -268,7 +268,7 @@ endforeach
                   <?=$news[$i]['description'];?>
                   </div>
                   <div class="dropdown-divider"></div>
-                  <a href="<?= base_url('berita/detail/'.$news[$i]['id_news']);?>">Read More...</a>
+                  <a href="<?= base_url('detailberita/show/'.$news[$i]['id_news']);?>">Read More...</a>
                 </div>
               </div>
               <?php } ?>
