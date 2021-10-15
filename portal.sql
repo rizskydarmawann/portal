@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2021 at 01:24 PM
+-- Generation Time: Oct 15, 2021 at 08:51 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -39,9 +39,9 @@ CREATE TABLE `aboutus` (
 --
 
 INSERT INTO `aboutus` (`id`, `title`, `description`, `created_at`) VALUES
-(1, 'Sejarah', '', '2021-10-14 09:33:28'),
-(2, 'Visi Misi', '', '2021-10-14 09:33:38'),
-(3, 'Kebijakan Privasi', '', '2021-10-14 10:40:45');
+(1, 'Sejarah', 'Sejarah disini', '2021-10-14 09:33:28'),
+(2, 'Visi Misi', '                                Visi Misi di sini', '2021-10-14 09:33:38'),
+(3, 'Kebijakan Privasi', 'Privasi di sini', '2021-10-14 10:40:45');
 
 -- --------------------------------------------------------
 
@@ -61,9 +61,9 @@ CREATE TABLE `akademik` (
 --
 
 INSERT INTO `akademik` (`id`, `title`, `description`, `created_at`) VALUES
-(1, 'Biaya Pendidikan', '', '2021-10-14 11:04:07'),
-(2, 'Jadwal Pendaftaran', '', '2021-10-14 11:04:16'),
-(3, 'Animo dan Daya Tampung', '', '2021-10-14 11:08:40');
+(1, 'Biaya Pendidikan', 'Biaya', '2021-10-14 11:04:07'),
+(2, 'Jadwal Pendaftaran', 'Jadwal', '2021-10-14 11:04:16'),
+(3, 'Animo dan Daya Tampung', '                                Animo', '2021-10-14 11:08:40');
 
 -- --------------------------------------------------------
 
@@ -79,6 +79,13 @@ CREATE TABLE `contact` (
   `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `name`, `email`, `subject`, `message`) VALUES
+(2, 'Rifqi Muhammad', 'muhammad45rifki@gmail.com', 'domain tidak bisa akses', 'toloooong');
+
 -- --------------------------------------------------------
 
 --
@@ -90,6 +97,14 @@ CREATE TABLE `gallery` (
   `title` varchar(255) NOT NULL,
   `foto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `gallery`
+--
+
+INSERT INTO `gallery` (`id`, `title`, `foto`) VALUES
+(1, 'Sample Foto', 'http://localhost/portal/assets/backend/upload/gallery/sample2.jpg'),
+(2, 'Sample foto 2', 'http://localhost/portal/assets/backend/upload/gallery/bird-thumbnail.jpg');
 
 -- --------------------------------------------------------
 
@@ -131,7 +146,8 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id_news`, `title`, `description`, `foto`, `created_at`) VALUES
-(1, 'Peresmian Kereta Cepat', 'Jakarta (BeritaMu.co.id) – Presiden Joko Widodo (Jokowi) mengaku tidak menyangka Terminal Wae Kelambu Pelabuhan Labuhan Bajo yang merupakan terminal khusus logistik pertama di Nusa Tenggara Timur (NTT) menjadi berukuran sangat besar.\r\n\r\nSaat meresmikan Terminal Multiguna Wae Kelambu Pelabuhan Labuan Bajo, NTT, Kamis, Presiden Jokowi mengira pelabuhan tersebut akan berukuran setara dengan Pelabuhan Labuan Bajo yang telah didirikan terlebih dahulu.\r\n\r\n“Saya tidak membayangkan bahwa pelabuhan yang baru ini sangat besar sekali. Pikiran saya itu sama seperti yang lama, hanya digeser ke sini,” kata Presiden Jokowi.\r\n\r\nPresiden Jokowi berharap pelabuhan tersebut bisa digunakan untuk jangka waktu yang lama, hingga 15-20 tahun mendatang, guna mengangkut logistik dari dan menuju NTT, khususnya Kabupaten Manggarai Barat. Ia mengapresiasi pelabuhan tersebut juga dibangun dalam tempo yang cepat.\r\n\r\n“Di bulan Agustus 2020. Pada 2020 dimulai (pembangunan) kemudian hari ini bisa kita selesaikan,” ujar Presiden Jokowi.\r\n\r\nTerminal Multiguna Wae Kelambu, Pelabuhan Labuan Bajo merupakan terminal khusus logistik pertama yang ada di NTT.                                ', 'http://localhost/portal/assets/backend/upload/news/image.PNG', '2021-10-14 09:29:35');
+(1, 'Peresmian Kereta Cepat', '<p>                                Jakarta (BeritaMu.co.id) – Presiden Joko Widodo (Jokowi) mengaku tidak menyangka Terminal Wae Kelambu Pelabuhan Labuhan Bajo yang merupakan terminal khusus logistik pertama di Nusa Tenggara Timur (NTT) menjadi berukuran sangat besar.\r\n</p><p>\r\nSaat meresmikan Terminal Multiguna Wae Kelambu Pelabuhan Labuan Bajo, NTT, Kamis, Presiden Jokowi mengira pelabuhan tersebut akan berukuran setara dengan Pelabuhan Labuan Bajo yang telah didirikan terlebih dahulu.\r\n\r\n“Saya tidak membayangkan bahwa pelabuhan yang baru ini sangat besar sekali. Pikiran saya itu sama seperti yang lama, hanya digeser ke sini,” kata Presiden Jokowi.\r\n</p><p>\r\nPresiden Jokowi berharap pelabuhan tersebut bisa digunakan untuk jangka waktu yang lama, hingga 15-20 tahun mendatang, guna mengangkut logistik dari dan menuju NTT, khususnya Kabupaten Manggarai Barat. </p><p>Ia mengapresiasi pelabuhan tersebut juga dibangun dalam tempo yang cepat.\r\n\r\n“Di bulan Agustus 2020. Pada 2020 dimulai (pembangunan) kemudian hari ini bisa kita selesaikan,” ujar Presiden Jokowi.\r\n\r\nTerminal Multiguna Wae Kelambu, Pelabuhan Labuan Bajo merupakan terminal khusus logistik pertama yang ada di NTT.                                                                </p>', 'http://localhost/portal/assets/backend/upload/news/image.PNG', '2021-10-15 08:10:18'),
+(2, 'Sample Berita', '<strong style=\"margin: 0px; padding: 0px; font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;\">Lorem Ipsum</strong><span style=\"font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;\">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>                                ', 'http://localhost/portal/assets/backend/upload/news/sample.jpg', '2021-10-15 08:11:06');
 
 -- --------------------------------------------------------
 
@@ -269,13 +285,13 @@ ALTER TABLE `akademik`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `link`
@@ -287,7 +303,7 @@ ALTER TABLE `link`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id_news` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_news` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `slideshow`
@@ -299,7 +315,7 @@ ALTER TABLE `slideshow`
 -- AUTO_INCREMENT for table `testimonial`
 --
 ALTER TABLE `testimonial`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
