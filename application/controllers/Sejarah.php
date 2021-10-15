@@ -5,6 +5,8 @@ class Sejarah extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('sejarah');
+		$this->load->model('admin_model');
+		$data['sejarah'] = $this->admin_model->select_sejarah();
+		$this->load->view('sejarah',$data);
 	}
 }

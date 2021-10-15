@@ -5,6 +5,9 @@ class Galery extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('galery');
+
+		$this->load->model('admin_model');
+		$data['gallery'] = $this->admin_model->getallgallery();
+		$this->load->view('galery',$data);
 	}
 }

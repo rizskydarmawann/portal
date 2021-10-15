@@ -238,210 +238,47 @@ endforeach
         <div class="row">
           <div class="col-lg-12">
             <div id="news-slider" class="owl-carousel">
+
+            <?php 
+            $jml = count($news);
+            for($i=0;$i<$jml;$i++){
+            ?>
+
               <div class="news-grid">
                 <div class="news-grid-image">
-                  <img src="<?=base_url()?>assets/frontend/images/image3.jpg" />
+                  <img src="<?=$news[$i]['foto']?>" />
                   <div class="news-grid-box">
                     <h1>19</h1>
                     <p>Sep</p>
                   </div>
                 </div>
                 <div class="news-grid-txt">
-                  <span>Finacne</span>
-                  <h2>Heading Will Be Here</h2>
+                  <span> Berita Stip </span>
+                  <h2><?=$news[$i]['title']?></h2>
                   <ul>
                     <li>
-                      <i class="icofont-calendar" aria-hidden="true"></i> Sep
-                      19, 2020
+                      <i class="icofont-calendar" aria-hidden="true"></i> <?=$news[$i]['created_at']?>
                     </li>
-                    <li><i class="icofont-eye" aria-hidden="true"></i> 2232</li>
+                    <li><i class="icofont-eye" aria-hidden="true"></i> 0</li>
                     <li>
-                      <i class="icofont-ui-user" aria-hidden="true"></i> Michael
-                      Ramores Raserva
+                      <i class="icofont-ui-user" aria-hidden="true"></i> Admin
                     </li>
                   </ul>
                   <div class="news-over">
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur, adipisicing elit.
-                      Consequuntur aspernatur reprehenderit velit est
-                      voluptatum, voluptas amet quasi dicta consectetur.
-                    </p>
+                  <?=$news[$i]['description'];?>
                   </div>
                   <div class="dropdown-divider"></div>
-                  <a href="detail-berita.html">Read More...</a>
+                  <a href="<?= base_url('berita/detail/'.$news[$i]['id_news']);?>">Read More...</a>
                 </div>
               </div>
-              <div class="news-grid">
-                <div class="news-grid-image">
-                  <img src="<?=base_url()?>assets/frontend/images/image2.jpg" />
-                  <div class="news-grid-box">
-                    <h1>19</h1>
-                    <p>Sep</p>
-                  </div>
-                </div>
-                <div class="news-grid-txt">
-                  <span>Finacne</span>
-                  <h2>Heading Will Be Here</h2>
-                  <ul>
-                    <li>
-                      <i class="icofont-calendar" aria-hidden="true"></i> Sep
-                      19, 2020
-                    </li>
-                    <li><i class="icofont-eye" aria-hidden="true"></i> 2232</li>
-                    <li>
-                      <i class="icofont-ui-user" aria-hidden="true"></i> Michael
-                      Ramores Raserva
-                    </li>
-                  </ul>
-                  <div class="news-over">
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur, adipisicing elit.
-                      Consequuntur aspernatur reprehenderit velit est
-                      voluptatum, voluptas amet quasi dicta consectetur.
-                    </p>
-                  </div>
-                  <div class="dropdown-divider"></div>
-                  <a href="detail-berita.html">Read More...</a>
-                </div>
-              </div>
-              <div class="news-grid">
-                <div class="news-grid-image">
-                  <img src="<?=base_url()?>assets/frontend/images/image3.jpg" />
-                  <div class="news-grid-box">
-                    <h1>19</h1>
-                    <p>Sep</p>
-                  </div>
-                </div>
-                <div class="news-grid-txt">
-                  <span>Finacne</span>
-                  <h2>Heading Will Be Here</h2>
-                  <ul>
-                    <li>
-                      <i class="icofont-calendar" aria-hidden="true"></i> Sep
-                      19, 2020
-                    </li>
-                    <li><i class="icofont-eye" aria-hidden="true"></i> 2232</li>
-                    <li>
-                      <i class="icofont-ui-user" aria-hidden="true"></i> Michael
-                      Ramores Raserva
-                    </li>
-                  </ul>
-                  <div class="news-over">
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur, adipisicing elit.
-                      Consequuntur aspernatur reprehenderit velit est
-                      voluptatum, voluptas amet quasi dicta consectetur.
-                    </p>
-                  </div>
-                  <div class="dropdown-divider"></div>
-                  <a href="detail-berita.html">Read More...</a>
-                </div>
-              </div>
-              <div class="news-grid">
-                <div class="news-grid-image">
-                  <img src="<?=base_url()?>assets/frontend/images/image5.jpg" />
-                  <div class="news-grid-box">
-                    <h1>19</h1>
-                    <p>Sep</p>
-                  </div>
-                </div>
-                <div class="news-grid-txt">
-                  <span>Finacne</span>
-                  <h2>Heading Will Be Here</h2>
-                  <ul>
-                    <li>
-                      <i class="icofont-calendar" aria-hidden="true"></i> Sep
-                      19, 2020
-                    </li>
-                    <li><i class="icofont-eye" aria-hidden="true"></i> 2232</li>
-                    <li>
-                      <i class="icofont-ui-user" aria-hidden="true"></i> Michael
-                      Ramores Raserva
-                    </li>
-                  </ul>
-                  <div class="news-over">
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur, adipisicing elit.
-                      Consequuntur aspernatur reprehenderit velit est
-                      voluptatum, voluptas amet quasi dicta consectetur.
-                    </p>
-                  </div>
-                  <div class="dropdown-divider"></div>
-                  <a href="detail-berita.html">Read More...</a>
-                </div>
-              </div>
-              <div class="news-grid">
-                <div class="news-grid-image">
-                  <img src="<?=base_url()?>assets/frontend/images/image4.jpg" />
-                  <div class="news-grid-box">
-                    <h1>19</h1>
-                    <p>Sep</p>
-                  </div>
-                </div>
-                <div class="news-grid-txt">
-                  <span>Finacne</span>
-                  <h2>Heading Will Be Here</h2>
-                  <ul>
-                    <li>
-                      <i class="icofont-calendar" aria-hidden="true"></i> Sep
-                      19, 2020
-                    </li>
-                    <li><i class="icofont-eye" aria-hidden="true"></i> 2232</li>
-                    <li>
-                      <i class="icofont-ui-user" aria-hidden="true"></i> Michael
-                      Ramores Raserva
-                    </li>
-                  </ul>
-                  <div class="news-over">
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur, adipisicing elit.
-                      Consequuntur aspernatur reprehenderit velit est
-                      voluptatum, voluptas amet quasi dicta consectetur.
-                    </p>
-                  </div>
-                  <div class="dropdown-divider"></div>
-                  <a href="detail-berita.html">Read More...</a>
-                </div>
-              </div>
-              <div class="news-grid">
-                <div class="news-grid-image">
-                  <img src="<?=base_url()?>assets/frontend/images/image5.jpg" />
-                  <div class="news-grid-box">
-                    <h1>19</h1>
-                    <p>Sep</p>
-                  </div>
-                </div>
-                <div class="news-grid-txt">
-                  <span>Finacne</span>
-                  <h2>Heading Will Be Here</h2>
-                  <ul>
-                    <li>
-                      <i class="icofont-calendar" aria-hidden="true"></i> Sep
-                      19, 2020
-                    </li>
-                    <li><i class="icofont-eye" aria-hidden="true"></i> 2232</li>
-                    <li>
-                      <i class="icofont-ui-user" aria-hidden="true"></i> Michael
-                      Ramores Raserva
-                    </li>
-                  </ul>
-                  <div class="news-over">
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur, adipisicing elit.
-                      Consequuntur aspernatur reprehenderit velit est
-                      voluptatum, voluptas amet quasi dicta consectetur.
-                    </p>
-                  </div>
-                  <div class="dropdown-divider"></div>
-                  <a href="detail-berita.html">Read More...</a>
-                </div>
-              </div>
+              <?php } ?>
+
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-12 d-flex justify-content-center">
-            <a href="berita.html" class="btn btn-primary"
+            <a href="<?= base_url('berita')?>" class="btn btn-primary"
               >Selengkapnya <i class="icofont-arrow-right"></i
             ></a>
           </div>
@@ -457,16 +294,22 @@ endforeach
             <h5>GALERY</h5>
           </div>
         </div>
+
+
         <div class="row row-galery">
+          <?php 
+          $j = count($gallery);
+          for($k=0;$k<$j;$k++){
+          ?>
           <div class="col-lg-3 col-md-6 col-sm-2">
             <div class="component-news d-block">
               <div class="news-thumbnail">
                 <div
                   class="news-image"
-                  style="background-image: url('<?=base_url()?>assets/frontend/images/image1.jpg')"
+                  style="background-image: url('<?=$gallery[$k]['foto']?>')"
                 >
                   <a
-                    href="<?=base_url()?>assets/frontend/images/image1.jpg"
+                    href="<?=$gallery[$k]['foto']?>"
                     data-gall="Gallery"
                     class="venobox d-flex justify-content-center"
                   >
@@ -475,139 +318,14 @@ endforeach
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-2">
-            <div class="component-news d-block">
-              <div class="news-thumbnail">
-                <div
-                  class="news-image"
-                  style="background-image: url('<?=base_url()?>assets/frontend/images/image5.jpg')"
-                >
-                  <a
-                    href="<?=base_url()?>assets/frontend/images/image5.jpg"
-                    data-gall="Gallery"
-                    class="venobox d-flex justify-content-center"
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-2">
-            <div class="component-news d-block">
-              <div class="news-thumbnail">
-                <div
-                  class="news-image"
-                  style="background-image: url('<?=base_url()?>assets/frontend/images/image2.jpg')"
-                >
-                  <a
-                    href="<?=base_url()?>assets/frontend/images/image2.jpg"
-                    data-gall="Gallery"
-                    class="venobox d-flex justify-content-center"
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-2">
-            <div class="component-news d-block">
-              <div class="news-thumbnail">
-                <div
-                  class="news-image"
-                  style="background-image: url('<?=base_url()?>assets/frontend/images/image5.jpg')"
-                >
-                  <a
-                    href="<?=base_url()?>assets/frontend/images/image5.jpg"
-                    data-gall="Gallery"
-                    class="venobox d-flex justify-content-center"
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-2">
-            <div class="component-news d-block">
-              <div class="news-thumbnail">
-                <div
-                  class="news-image"
-                  style="background-image: url('<?=base_url()?>assets/frontend/images/image3.jpg')"
-                >
-                  <a
-                    href="<?=base_url()?>assets/frontend/images/image3.jpg"
-                    data-gall="Gallery"
-                    class="venobox d-flex justify-content-center"
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-2">
-            <div class="component-news d-block">
-              <div class="news-thumbnail">
-                <div
-                  class="news-image"
-                  style="background-image: url('<?=base_url()?>assets/frontend/images/image4.jpg')"
-                >
-                  <a
-                    href="<?=base_url()?>assets/frontend/images/image4.jpg"
-                    data-gall="Gallery"
-                    class="venobox d-flex justify-content-center"
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-2">
-            <div class="component-news d-block">
-              <div class="news-thumbnail">
-                <div
-                  class="news-image"
-                  style="background-image: url('<?=base_url()?>assets/frontend/images/image4.jpg')"
-                >
-                  <a
-                    href="<?=base_url()?>assets/frontend/images/image4.jpg"
-                    data-gall="Gallery"
-                    class="venobox d-flex justify-content-center"
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-2">
-            <div class="component-news d-block">
-              <div class="news-thumbnail">
-                <div
-                  class="news-image"
-                  style="background-image: url('<?=base_url()?>assets/frontend/images/image5.jpg')"
-                >
-                  <a
-                    href="<?=base_url()?>assets/frontend/images/image5.jpg"
-                    data-gall="Gallery"
-                    class="venobox d-flex justify-content-center"
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-2">
-            <div class="component-news d-block">
-              <div class="news-thumbnail">
-                <div
-                  class="news-image"
-                  style="background-image: url('<?=base_url()?>assets/frontend/images/image4.jpg')"
-                >
-                  <a
-                    href="<?=base_url()?>assets/frontend/images/image4.jpg"
-                    data-gall="Gallery"
-                    class="venobox d-flex justify-content-center"
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
+            <?php }  ?>
         </div>
+
+
       </div>
       <div class="row pt-5">
         <div class="col-12 d-flex justify-content-center">
-          <a href="galery.html" class="btn btn-primary"
+          <a href="<?= base_url('galery');?>" class="btn btn-primary"
             >Selengkapnya <i class="icofont-arrow-right"></i
           ></a>
         </div>
@@ -624,16 +342,16 @@ endforeach
                 <h5>FEATURES</h5>
                 <ul class="list-unstyled">
                   <li>
-                    <a href=" "> Hukum</a>
+                    <a href="<?= base_url('sejarah'); ?>"> Sejarah </a>
                   </li>
                   <li>
-                    <a href=" ">Travel</a>
+                    <a href=" <?= base_url('vm'); ?> "> Visi Misi </a>
                   </li>
                   <li>
-                    <a href=" ">Property</a>
+                    <a href=" <?= base_url('biaya'); ?> "> Biaya Pendidikan </a>
                   </li>
                   <li>
-                    <a href=" ">Komveksi</a>
+                    <a href=" <?= base_url('jadwal'); ?> "> Jadwal Pendaftaran </a>
                   </li>
                 </ul>
               </div>

@@ -5,6 +5,8 @@ class Vm extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('vm');
+		$this->load->model('admin_model');
+		$data['vm'] = $this->admin_model->select_vm();
+		$this->load->view('vm',$data);
 	}
 }

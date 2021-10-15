@@ -5,6 +5,8 @@ class Animo extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('animo');
+		$this->load->model('admin_model');
+		$data['animo'] = $this->admin_model->select_animo();
+		$this->load->view('animo',$data);
 	}
 }

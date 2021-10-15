@@ -96,146 +96,42 @@
           <h2>News</h2>
         </div>
         <div class="row">
+
+        <?php 
+            $jml = count($news);
+            for($i=0;$i<$jml;$i++){
+            ?>
+
           <div class="col-lg-6 col-md-6 col-sm-2">
             <div class="news-grid">
               <div class="news-grid-image">
-                <img src="<?= base_url()?>assets/frontend/images/image3.jpg" />
+                <img src="<?= $news[$i]['foto'];?>" />
                 <div class="news-grid-box">
                   <h1>19</h1>
                   <p>Sep</p>
                 </div>
               </div>
               <div class="news-grid-txt">
-                <span>Finacne</span>
-                <h2>Heading Will Be Here</h2>
+                <span>Berita Stip</span>
+                <h2> <?= $news[$i]['title'];?> </h2>
                 <ul>
                   <li>
-                    <i class="icofont-calendar" aria-hidden="true"></i> Sep 19,
-                    2020
+                    <i class="icofont-calendar" aria-hidden="true"></i> <?= $news[$i]['created_at'];?>
                   </li>
-                  <li><i class="icofont-eye" aria-hidden="true"></i> 2232</li>
+                  <li><i class="icofont-eye" aria-hidden="true"></i> 0</li>
                   <li>
-                    <i class="icofont-ui-user" aria-hidden="true"></i> Michael
-                    Ramores Raserva
+                    <i class="icofont-ui-user" aria-hidden="true"></i> Admin
                   </li>
                 </ul>
                 <div class="news-over">
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur, adipisicing elit.
-                    Consequuntur aspernatur reprehenderit velit est voluptatum,
-                    voluptas amet quasi dicta consectetur.
-                  </p>
+                <?= $news[$i]['description'];?>
                 </div>
                 <div class="dropdown-divider"></div>
-                <a href="<?= base_url()?>detailberita">Read More...</a>
+                <a href="<?= base_url('berita/detail/'.$news[$i]['id_news'])?>">Read More...</a>
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-2">
-            <div class="news-grid">
-              <div class="news-grid-image">
-                <img src="<?= base_url()?>assets/frontend/images/image3.jpg" />
-                <div class="news-grid-box">
-                  <h1>19</h1>
-                  <p>Sep</p>
-                </div>
-              </div>
-              <div class="news-grid-txt">
-                <span>Finacne</span>
-                <h2>Heading Will Be Here</h2>
-                <ul>
-                  <li>
-                    <i class="icofont-calendar" aria-hidden="true"></i> Sep 19,
-                    2020
-                  </li>
-                  <li><i class="icofont-eye" aria-hidden="true"></i> 2232</li>
-                  <li>
-                    <i class="icofont-ui-user" aria-hidden="true"></i> Michael
-                    Ramores Raserva
-                  </li>
-                </ul>
-                <div class="news-over">
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur, adipisicing elit.
-                    Consequuntur aspernatur reprehenderit velit est voluptatum,
-                    voluptas amet quasi dicta consectetur.
-                  </p>
-                </div>
-                <div class="dropdown-divider"></div>
-                <a href="<?= base_url()?>detailberita">Read More...</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-2">
-            <div class="news-grid">
-              <div class="news-grid-image">
-                <img src="<?= base_url()?>assets/frontend/images/image3.jpg" />
-                <div class="news-grid-box">
-                  <h1>19</h1>
-                  <p>Sep</p>
-                </div>
-              </div>
-              <div class="news-grid-txt">
-                <span>Finacne</span>
-                <h2>Heading Will Be Here</h2>
-                <ul>
-                  <li>
-                    <i class="icofont-calendar" aria-hidden="true"></i> Sep 19,
-                    2020
-                  </li>
-                  <li><i class="icofont-eye" aria-hidden="true"></i> 2232</li>
-                  <li>
-                    <i class="icofont-ui-user" aria-hidden="true"></i> Michael
-                    Ramores Raserva
-                  </li>
-                </ul>
-                <div class="news-over">
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur, adipisicing elit.
-                    Consequuntur aspernatur reprehenderit velit est voluptatum,
-                    voluptas amet quasi dicta consectetur.
-                  </p>
-                </div>
-                <div class="dropdown-divider"></div>
-                <a href="<?= base_url()?>detailberita">Read More...</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-2">
-            <div class="news-grid">
-              <div class="news-grid-image">
-                <img src="<?= base_url()?>assets/frontend/images/image3.jpg" />
-                <div class="news-grid-box">
-                  <h1>19</h1>
-                  <p>Sep</p>
-                </div>
-              </div>
-              <div class="news-grid-txt">
-                <span>Finacne</span>
-                <h2>Heading Will Be Here</h2>
-                <ul>
-                  <li>
-                    <i class="icofont-calendar" aria-hidden="true"></i> Sep 19,
-                    2020
-                  </li>
-                  <li><i class="icofont-eye" aria-hidden="true"></i> 2232</li>
-                  <li>
-                    <i class="icofont-ui-user" aria-hidden="true"></i> Michael
-                    Ramores Raserva
-                  </li>
-                </ul>
-                <div class="news-over">
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur, adipisicing elit.
-                    Consequuntur aspernatur reprehenderit velit est voluptatum,
-                    voluptas amet quasi dicta consectetur.
-                  </p>
-                </div>
-                <div class="dropdown-divider"></div>
-                <a href="<?= base_url()?>detailberita">Read More...</a>
-              </div>
-            </div>
-          </div>
+        <?php } ?>
         </div>
       </div>
     </section>

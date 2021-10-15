@@ -96,15 +96,21 @@
           <h2>Galery</h2>
         </div>
         <div class="row">
+
+        <?php 
+          $j = count($gallery);
+          for($k=0;$k<$j;$k++){
+          ?>
+          
           <div class="col-lg-3 col-md-6 col-sm-2">
             <div class="component-news d-block">
               <div class="news-thumbnail">
                 <div
                   class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image1.jpg')"
+                  style="background-image: url('<?=$gallery[$k]['foto']?>')"
                 >
                   <a
-                    href="<?= base_url()?>assets/frontend/images/image1.jpg"
+                    href="<?=$gallery[$k]['foto']?>"
                     data-gall="Gallery"
                     class="venobox d-flex justify-content-center"
                   >
@@ -113,134 +119,9 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-2">
-            <div class="component-news d-block">
-              <div class="news-thumbnail">
-                <div
-                  class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image5.jpg')"
-                >
-                  <a
-                    href="<?= base_url()?>assets/frontend/images/image5.jpg"
-                    data-gall="Gallery"
-                    class="venobox d-flex justify-content-center"
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-2">
-            <div class="component-news d-block">
-              <div class="news-thumbnail">
-                <div
-                  class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image2.jpg')"
-                >
-                  <a
-                    href="<?= base_url()?>assets/frontend/images/image2.jpg"
-                    data-gall="Gallery"
-                    class="venobox d-flex justify-content-center"
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-2">
-            <div class="component-news d-block">
-              <div class="news-thumbnail">
-                <div
-                  class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image5.jpg')"
-                >
-                  <a
-                    href="<?= base_url()?>assets/frontend/images/image5.jpg"
-                    data-gall="Gallery"
-                    class="venobox d-flex justify-content-center"
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-2">
-            <div class="component-news d-block">
-              <div class="news-thumbnail">
-                <div
-                  class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image3.jpg')"
-                >
-                  <a
-                    href="<?= base_url()?>assets/frontend/images/image3.jpg"
-                    data-gall="Gallery"
-                    class="venobox d-flex justify-content-center"
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-2">
-            <div class="component-news d-block">
-              <div class="news-thumbnail">
-                <div
-                  class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image4.jpg')"
-                >
-                  <a
-                    href="<?= base_url()?>assets/frontend/images/image4.jpg"
-                    data-gall="Gallery"
-                    class="venobox d-flex justify-content-center"
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-2">
-            <div class="component-news d-block">
-              <div class="news-thumbnail">
-                <div
-                  class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image4.jpg')"
-                >
-                  <a
-                    href="<?= base_url()?>assets/frontend/images/image4.jpg"
-                    data-gall="Gallery"
-                    class="venobox d-flex justify-content-center"
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-2">
-            <div class="component-news d-block">
-              <div class="news-thumbnail">
-                <div
-                  class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image5.jpg')"
-                >
-                  <a
-                    href="<?= base_url()?>assets//frontend/images/image5.jpg"
-                    data-gall="Gallery"
-                    class="venobox d-flex justify-content-center"
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-2">
-            <div class="component-news d-block">
-              <div class="news-thumbnail">
-                <div
-                  class="news-image"
-                  style="background-image: url('<?= base_url()?>assets/frontend/images/image4.jpg')"
-                >
-                  <a
-                    href="<?= base_url()?>assets//frontend/images/image4.jpg"
-                    data-gall="Gallery"
-                    class="venobox d-flex justify-content-center"
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
+
+          
+          <?php } ?>
         </div>
       </div>
     </section>

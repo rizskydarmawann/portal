@@ -5,6 +5,8 @@ class Testimoni extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('testimoni');
+		$this->load->model('admin_model');
+		$data['testimoni'] = $this->admin_model->getalltestimoni();
+		$this->load->view('testimoni',$data);
 	}
 }

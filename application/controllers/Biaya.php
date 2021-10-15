@@ -5,6 +5,8 @@ class Biaya extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('biaya');
+		$this->load->model('admin_model');
+		$data['biaya'] = $this->admin_model->select_biaya();
+		$this->load->view('biaya',$data);
 	}
 }

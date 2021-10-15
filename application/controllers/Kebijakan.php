@@ -5,6 +5,8 @@ class Kebijakan extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('kebijakan');
+		$this->load->model('admin_model');
+		$data['privasi'] = $this->admin_model->select_privasi();
+		$this->load->view('kebijakan',$data);
 	}
 }

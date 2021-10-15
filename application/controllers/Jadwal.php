@@ -5,6 +5,8 @@ class Jadwal extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('jadwal');
+		$this->load->model('admin_model');
+		$data['jadwal'] = $this->admin_model->select_jadwal();
+		$this->load->view('jadwal',$data);
 	}
 }

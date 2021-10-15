@@ -96,42 +96,27 @@
           <h2>Testimoni</h2>
         </div>
         <div class="row">
-          <div class="col-lg-6 testimoni-col">
-            <div class="testimonial-item">
-              <img src="<?= base_url()?>assets/frontend/images/3.png" class="testimonial-img" alt="">
-              <h3>Saul Goodman</h3>
-              <h4>Ceo &amp; Founder</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-6 testimoni-col">
-            <div class="testimonial-item">
-              <img src="<?= base_url()?>assets/frontend/images/4.png" class="testimonial-img" alt="">
-              <h3>Saul Goodman</h3>
-              <h4>Ceo &amp; Founder</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
+          
+        <?php 
+          $j = count($testimoni);
+          for($k=0;$k<$j;$k++){
+          ?>
+          
+
           <div class="col-lg-6 testimoni-col">
             <div class="testimonial-item">
               <img src="<?= base_url()?>assets/frontend/images/2.png" class="testimonial-img" alt="">
-              <h3>Saul Goodman</h3>
-              <h4>Ceo &amp; Founder</h4>
+              <h3><?= $testimoni[$k]['name'];?></h3>
+              <h4> Mail &amp; <?= $testimoni[$k]['email'];?></h4>
               <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                <?= $testimoni[$k]['description'];?>
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>
           </div>
+
+          <?php } ?>
       </div>
     </section>
     <!-- content -->
