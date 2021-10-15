@@ -307,6 +307,24 @@ public function getalltestimoni()
 }
 
 
+public function insert_testimoni(){
+
+	$data = array(
+		'name' => $this->input->post('name'),
+		'email' => $this->input->post('email'),
+		'description' => $this->input->post('description')
+	);
+
+	$this->db->insert('testimonial', $data);
+}
+
+public function delete_testimoni($id){
+
+	$sql = $this->db->query("delete from testimonial where id = '".$id."' ");
+	return $sql;
+}
+
+
 public function select_biaya()
 {
 	$sql = $this->db->query("select * from akademik where id = '1'");

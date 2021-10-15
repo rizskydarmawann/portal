@@ -544,6 +544,43 @@ public function proses_edit_privasi(){
         $this->load->view('admin/themes/footer');
     }
 
+
+    
+    public function add_testimoni()
+    {
+
+        $data['title'] = 'Add Testimonial';
+        $this->load->view('admin/themes/header');
+        $this->load->view('admin/testimoni/add',$data);
+        $this->load->view('admin/themes/footer');
+    }
+
+
+    
+
+	public function proses_add_testimoni() {
+
+		$this->load->model('Admin_model','testimoni');
+		$this->testimoni->insert_testimoni();
+		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Testimoni berhasil ditambahkan !</div>');
+        redirect('admin/testimoni');
+
+	}
+
+
+
+
+    public function delete_testimoni()
+    {
+
+        $id = $this->uri->segment(3);
+        $this->load->model('Admin_model','testimoni');
+		$this->testimoni->delete_testimoni($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Testimonial berhasil dihapus ! </div>');
+        redirect('admin/testimoni');
+    }
+
+
     public function animo()
     {
         $data['title'] = 'Animo dan Daya Tampung';

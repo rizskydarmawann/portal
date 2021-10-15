@@ -6,7 +6,7 @@
             <div class="card shadow mb-4">
                 <div class="card-body">
                 <div class=" pb-3 d-flex flex-row-reverse">
-                    <a href=" <?php echo base_url('admin/add_news'); ?>" class=" btn btn-primary">tambah</a>
+                    <a href=" <?php echo base_url('admin/add_testimoni'); ?>" class=" btn btn-primary">tambah</a>
                 </div>
                 <?= $this->session->flashdata('message');?>
                     <table class="table table-striped table-bordered table-sm"  width="100%" cellspacing="0">
@@ -32,8 +32,8 @@
                                 <td><?=$testimoni[$i]['email']?></td> 
                                 <td><?=$testimoni[$i]['description']?></td> 
                                 <td>                             
-                                    <a href="<?= base_url('admin/edit_testimoni/'.$testimoni[$i]['id']); ?>" type="button"
-                                        class="badge badge-success">Edit</a>
+                                    <a href="<?= base_url('admin/delete_testimoni/'.$testimoni[$i]['id']); ?>" type="button"
+                                        class="badge badge-success" onclick="return confirm('Yakin Mau Hapus ??')">Delete</a>
                                 </td>
                             </tr>
                         <?php $no++; } ?>
