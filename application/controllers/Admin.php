@@ -455,6 +455,21 @@ public function proses_edit_privasi(){
     }
 
 
+    
+    public function delete_kontak()
+    {
+
+    $id = $this->uri->segment(3);
+    $this->load->model('Admin_model','kontak');
+    $this->kontak->delete_kontak($id);
+    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Kontak berhasil dihapus !</div>');
+    redirect(base_url('admin/kontak'));
+
+
+    }
+
+
+
     public function gallery()
     {
 
@@ -594,6 +609,7 @@ public function proses_edit_jadwal(){
 
 
 }
+
 
 
 

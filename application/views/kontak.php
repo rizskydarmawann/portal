@@ -91,6 +91,7 @@
 
     <section class="section-kontak contact">
       <div class="container">
+      <?= $this->session->flashdata('message');?>
         <div class="section-title">
           <span>Kontak</span>
           <h2>Kontak</h2>
@@ -129,8 +130,9 @@
             </div>
           </div>
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+          
             <form
-              action="forms/contact.php"
+              action="<?= base_url('kontak/post')?>"
               method="post"
               role="form"
               class="php-email-form"

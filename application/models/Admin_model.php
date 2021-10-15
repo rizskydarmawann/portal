@@ -410,6 +410,26 @@ public function proses_edit_jadwal(){
 
 }
 
+public function post_kontak(){
+
+
+	$data = array(
+		'name' => $this->input->post('name'),
+		'email' => $this->input->post('email'),
+		'subject' => $this->input->post('subject'),
+		'message' => $this->input->post('message'),
+	);
+
+	$this->db->insert('contact', $data);
+
+}
+
+public function delete_kontak($id){
+
+	$sql = $this->db->query("delete from contact where id = '".$id."' ");
+	return $sql;
+}
+
 
 
 } ?>
