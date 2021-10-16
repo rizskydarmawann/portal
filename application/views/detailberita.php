@@ -100,12 +100,12 @@
               </h2>
               <ul>
                 <li>
-                  <i class="icofont-calendar" aria-hidden="true"></i> <?= $news[0]['created_at']?>
+                  <i class="icofont-calendar" aria-hidden="true"></i> <?=$this->libs->ymdhis2dMonthy($news[0]['created_at'])?>
                 </li>
                 <li>
-                  <i class="icofont-ui-user" aria-hidden="true"></i> Admin
+                  <i class="icofont-ui-user" aria-hidden="true"></i> <?= $news[0]['modify']?>
                 </li>
-                <li><i class="icofont-eye" aria-hidden="true"></i> 0</li>
+                <li><i class="icofont-eye" aria-hidden="true"></i> <?=$news[0]['hit']?></li>
               </ul>
             </div>
             <div class="post-sharing text-center">
@@ -147,9 +147,7 @@
             </div>
             <!-- end media -->
             <div class="blog-content">
-              <div class="pp">
-              <?= $news[0]['description']?>
-              </div>
+             
               <!-- end pp -->
 
               <img

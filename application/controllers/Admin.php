@@ -28,7 +28,7 @@ class Admin extends CI_Controller
             $newdata = array(
                 'id_user' => $data['log'][0]['id_user'],
                 'username' => $data['log'][0]['username'],
-                'email' => $data['log'][0]['email'],
+                'nama_panjang' => $data['log'][0]['nama_panjang'],
                 'status' => $data['log'][0]['status'],
             );
             $this->session->set_userdata($newdata);
@@ -293,7 +293,7 @@ class Admin extends CI_Controller
                     $this->db->update('link',$data);
                 }else{
                     $data = array(
-                        'judul' => $this->input->post('judul'),
+                        
                         'created_at' => date("Y-m-d H:i:s"),
                     );
                     $this->db->where('id_link',$id);
@@ -303,6 +303,17 @@ class Admin extends CI_Controller
                 Link berhasil diubah !</div>');
                 redirect('admin/link');
             }
+    }
+
+    public function delete_link()
+    {
+
+    $id = $this->uri->segment(3);
+	$this->admin_model->delete_link($id);
+    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Link berhasil dihapus !</div>');
+    redirect(base_url('admin/link'));
+
+
     }
 
 
@@ -378,6 +389,17 @@ public function edit_sejarah()
     $this->load->view('admin/themes/header');
     $this->load->view('admin/tentangkami/sejarah',$data);
     $this->load->view('admin/themes/footer');
+}
+
+public function delete_news()
+{
+
+$id = $this->uri->segment(3);
+$this->admin_model->delete_news($id);
+$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">News berhasil dihapus !</div>');
+redirect(base_url('admin/news'));
+
+
 }
 
 
@@ -565,6 +587,25 @@ public function proses_edit_privasi(){
 		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Testimoni berhasil ditambahkan !</div>');
         redirect('admin/testimoni');
 
+	}
+
+    public function edit_testimoni($id)
+    {
+		$data['testimoni'] = $this->admin_model->select_testimoni($id);
+		// var_dump($data['testimoni']);
+		$data['title'] = 'Edit Testimoni';
+            $this->load->view('admin/themes/header');
+            $this->load->view('admin/testimoni/edit', $data);
+            $this->load->view('admin/themes/footer');
+    }
+
+    public function proses_edit_testimoni() {
+
+	
+		$this->load->model('Admin_model','testimoni');
+		$this->testimoni->edit_testimoni();
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Testimoni berhasil diubah !</div>');
+        redirect('admin/testimoni/content');
 	}
 
 

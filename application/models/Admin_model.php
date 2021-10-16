@@ -58,6 +58,12 @@ public function select_link($id)
 
 }
 
+public function delete_link($id){
+
+	$sql = $this->db->query("delete from link where id_link = '".$id."' ");
+	return $sql;
+}
+
 public function getallnews()
 {
 	$sql = $this->db->query("select * from news")->result_array();
@@ -87,7 +93,8 @@ public function insert_news(){
 			'title' => $this->input->post('title'),
 			'description' => $this->input->post('description'),
 			'foto' => $url,
-			'created_at' => date("Y-m-d H:i:s"),
+			'modify' => $this->session->userdata('nama_panjang'),
+			'created_at' => date("Y-m-d"),
 		);
 		$this->db->insert('news', $data);
 
@@ -97,7 +104,7 @@ public function insert_news(){
 		$data = array(
 			'title' => $this->input->post('title'),
 			'description' => $this->input->post('description'),
-			'created_at' => date("Y-m-d H:i:s"),
+			'created_at' => date("Y-m-d"),
 		);
 		$this->db->insert('news', $data);
 
@@ -150,6 +157,7 @@ public function edit_news(){
 		$data = array(
 			'title' => $this->input->post('title'),
 			'description' => $this->input->post('description'),
+			'modify' =>  $this->session->userdata('nama_panjang'),
 			'created_at' => date("Y-m-d H:i:s"),
 		);
 
@@ -160,6 +168,12 @@ public function edit_news(){
 	
 
 
+}
+
+public function delete_news($id){
+
+	$sql = $this->db->query("delete from news where id_news = '".$id."' ");
+	return $sql;
 }
 
 
@@ -306,16 +320,111 @@ public function getalltestimoni()
 
 }
 
-
 public function insert_testimoni(){
 
-	$data = array(
-		'name' => $this->input->post('name'),
-		'email' => $this->input->post('email'),
-		'description' => $this->input->post('description')
-	);
+	$foto = str_replace(" ", "_", $_FILES['foto']['name']);
+	$url = base_url('assets/backend/upload/testimoni/' . $foto);
+	if (!empty($foto)) {
+		$tujuan_file = realpath(APPPATH . '../assets/backend/upload/testimoni/');
+		$konfigurasi = array(
+			'allowed_types' => 'jpg|jpeg|png|bmp|JPG',
+			'upload_path' => $tujuan_file,
+			'remove_spaces' => true,
+			'file_name' => $foto,
+		);
 
-	$this->db->insert('testimonial', $data);
+		$this->load->library('upload', $konfigurasi);
+		$this->upload->do_upload('foto');
+		$this->upload->data();
+
+		$data = array(
+			'name' => $this->input->post('name'),
+			'email' => $this->input->post('email'),
+			'description' => $this->input->post('description'),
+			'foto' => $url,
+		);
+		$this->db->insert('testimonial', $data);
+
+	} else {
+
+	
+		$data = array(
+			'name' => $this->input->post('name'),
+			'email' => $this->input->post('email'),
+			'description' => $this->input->post('description'),
+		);
+		$this->db->insert('testimonial', $data);
+
+	}
+	
+}
+
+// public function insert_testimoni(){
+
+// 	$data = array(
+// 		'name' => $this->input->post('name'),
+// 		'email' => $this->input->post('email'),
+// 		'description' => $this->input->post('description')
+// 	);
+
+// 	$this->db->insert('testimonial', $data);
+// }
+
+
+public function select_testimoni($id)
+{
+	$sql = $this->db->query("select * from testimonial where id = '".$id."'");
+	$data = $sql->result_array();
+	return $data;
+
+}
+
+public function edit_testimoni(){
+
+	$id = $this->input->post('id');
+	$foto = str_replace(" ", "_", $_FILES['foto']['name']);
+	$url = base_url('assets/backend/upload/testimoni/' . $foto);
+	if (!empty($foto)) {
+		$tujuan_file = realpath(APPPATH . '../assets/backend/upload/testimoni/');
+		$konfigurasi = array(
+			'allowed_types' => 'jpg|jpeg|png|bmp|JPG',
+			'upload_path' => $tujuan_file,
+			'remove_spaces' => true,
+			'file_name' => $foto,
+		);
+
+		$this->load->library('upload', $konfigurasi);
+		$this->upload->do_upload('foto');
+		$this->upload->data();
+
+		$data = array(
+			'name' => $this->input->post('name'),
+			'email' => $this->input->post('email'),
+			'description' => $this->input->post('description'),
+			'foto' => $url,
+			
+		);
+
+		$this->db->where('id',$id);
+		$this->db->update('testimonial', $data);
+
+	} else {
+
+	
+		$data = array(
+			'name' => $this->input->post('name'),
+			'email' => $this->input->post('email'),
+			'description' => $this->input->post('description'),
+			
+		);
+
+		$this->db->where('id_news',$id);
+		$this->db->update('news', $data);
+
+	}
+	
+
+
 }
 
 public function delete_testimoni($id){

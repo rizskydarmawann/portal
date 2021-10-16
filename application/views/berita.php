@@ -100,6 +100,10 @@
         <?php 
             $jml = count($news);
             for($i=0;$i<$jml;$i++){
+
+              $tlh1 = $this->libs->ymdhis2dMonthy($news[$i]['created_at']);
+              $tanggal = date('d');
+              $bulan = $this->libs->Month(date('m'));
             ?>
 
           <div class="col-lg-6 col-md-6 col-sm-2">
@@ -107,22 +111,22 @@
               <div class="news-grid-image">
                 <img src="<?= $news[$i]['foto'];?>" />
                 <div class="news-grid-box">
-                  <h1>19</h1>
-                  <p>Sep</p>
+                  <h1><?=$tanggal?></h1>
+                  <p><?=$bulan?></p>
                 </div>
               </div>
               <div class="news-grid-txt">
                 <span>Berita Stip</span>
                 <h2> <?= $news[$i]['title'];?> </h2>
                 <ul>
-                  <li>
-                    <i class="icofont-calendar" aria-hidden="true"></i> <?= $news[$i]['created_at'];?>
-                  </li>
-                  <li><i class="icofont-eye" aria-hidden="true"></i> 0</li>
-                  <li>
-                    <i class="icofont-ui-user" aria-hidden="true"></i> Admin
-                  </li>
-                </ul>
+                    <li>
+                      <i class="icofont-calendar" aria-hidden="true"></i> <?=$this->libs->ymdhis2dMonthy($news[$i]['created_at'])?>
+                    </li>
+                    <li><i class="icofont-eye" aria-hidden="true"></i> <?=$news[$i]['hit']?></li>
+                    <li>
+                      <i class="icofont-ui-user" aria-hidden="true"></i> <?=$news[$i]['modify']?>
+                    </li>
+                  </ul>
                 <div class="news-over">
                 <?= $news[$i]['description'];?>
                 </div>

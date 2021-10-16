@@ -15,6 +15,7 @@
                                 <th>No</th>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th>Foto</th>
                                 <th>Keterangan</th>
                                 <th>Aksi</th>
                             </tr>
@@ -30,10 +31,13 @@
                                 <td> <?= $no?></td>
                                 <td><?= $testimoni[$i]['name']?></td>
                                 <td><?=$testimoni[$i]['email']?></td> 
+                                <td><img src="<?= $testimoni[$i]['foto']?>" class="img-fluid img-thumbnail" width="40%" ></td>
                                 <td><?=$testimoni[$i]['description']?></td> 
                                 <td>                             
                                     <a href="<?= base_url('admin/delete_testimoni/'.$testimoni[$i]['id']); ?>" type="button"
-                                        class="badge badge-success" onclick="return confirm('Yakin Mau Hapus ??')">Delete</a>
+                                        class="badge badge-danger" onclick="return confirm('Yakin Mau Hapus ??')">Delete</a>
+                                        <a href=" <?php echo base_url('admin/edit_testimoni/' .$testimoni[$i]['id']); ?>" type="button"
+                                        class="badge badge-success">Edit</a>
                                 </td>
                             </tr>
                         <?php $no++; } ?>

@@ -105,9 +105,9 @@
 
           <div class="col-lg-6 testimoni-col">
             <div class="testimonial-item">
-              <img src="<?= base_url()?>assets/frontend/images/2.png" class="testimonial-img" alt="">
+              <img src="<?= $testimoni[$k]['foto'];?>" class="testimonial-img" alt="">
               <h3><?= $testimoni[$k]['name'];?></h3>
-              <h4> Mail &amp; <?= $testimoni[$k]['email'];?></h4>
+              <h4> <?= $testimoni[$k]['email'];?></h4>
               <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                 <?= $testimoni[$k]['description'];?>

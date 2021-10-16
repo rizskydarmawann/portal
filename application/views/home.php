@@ -209,7 +209,7 @@ endforeach
             <div id="link" class="owl-carousel">
             <?php foreach ($link as $row):
         ?>
-              <div class="figure-img"><a href="<?php echo $row['url']; ?>">
+              <div class="figure-img"><a target="_blank" href="<?php echo $row['url']; ?>">
                 <img
                   src="<?php echo $row['foto_link']; ?>"
                   class="figure-img img-fluid"
@@ -242,14 +242,17 @@ endforeach
             <?php 
             $jml = count($news);
             for($i=0;$i<$jml;$i++){
+              $tlh1 = $this->libs->ymdhis2dMonthy($news[$i]['created_at']);
+              $tanggal = date('d');
+              $bulan = $this->libs->Month(date('m'));
             ?>
 
               <div class="news-grid">
                 <div class="news-grid-image">
                   <img src="<?=$news[$i]['foto']?>" />
                   <div class="news-grid-box">
-                    <h1>19</h1>
-                    <p>Sep</p>
+                    <h1><?= $tanggal?></h1>
+                    <p><?= $bulan?></p>
                   </div>
                 </div>
                 <div class="news-grid-txt">
@@ -257,11 +260,11 @@ endforeach
                   <h2><?=$news[$i]['title']?></h2>
                   <ul>
                     <li>
-                      <i class="icofont-calendar" aria-hidden="true"></i> <?=$news[$i]['created_at']?>
+                      <i class="icofont-calendar" aria-hidden="true"></i> <?=$this->libs->ymdhis2dMonthy($news[$i]['created_at'])?>
                     </li>
-                    <li><i class="icofont-eye" aria-hidden="true"></i> 0</li>
+                    <li><i class="icofont-eye" aria-hidden="true"></i> <?=$news[$i]['hit']?></li>
                     <li>
-                      <i class="icofont-ui-user" aria-hidden="true"></i> Admin
+                      <i class="icofont-ui-user" aria-hidden="true"></i> <?=$news[$i]['modify']?>
                     </li>
                   </ul>
                   <div class="news-over">

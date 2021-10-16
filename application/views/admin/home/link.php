@@ -33,6 +33,8 @@ foreach ($link as $row):
                                 <td  width="5%">                                   
                                     <a href=" <?php echo base_url('admin/edit_link/' . $row['id_link']); ?>" type="button"
                                         class="badge badge-success">Edit</a>
+                                        <a href="<?= base_url('admin/delete_link/'.$row['id_link']); ?>" type="button"
+                                        class="badge badge-danger" onclick="return confirm('Yakin Mau Hapus data ini ??')">Delete</a>
                                 </td>
                             </tr>
                             <?php

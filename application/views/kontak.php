@@ -96,8 +96,7 @@
           <span>Kontak</span>
           <h2>Kontak</h2>
           <p>
-            Sit sint consectetur velit quisquam cupiditate impedit suscipit
-            alias
+            Silahkan isi form dibawah untuk berkomunikasi dengan kami !
           </p>
         </div>
         <div class="row">

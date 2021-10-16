@@ -110,30 +110,7 @@
  </li>
 
 
-<hr class="sidebar-divider mt-3">
 
-
-<div class="sidebar-heading">
-    menu
-</div>
-
-<li class="nav-item active">
-<li class="nav-item">
-   <a class="nav-link pb-0" href="<?= base_url('admin/dashboard')?>">
-    <i class="fas fa-fw fa-tachometer-alt"></i>
-    <span>Dashboard</span></a>     
- </li>
- <li class="nav-item">
-   <a class="nav-link pb-0" href="<?= base_url('admin/dashboard')?>">
-    <i class="fas fa-fw fa-sliders-h"></i>
-    <span>Slide Show</span></a>  
- </li>
-
- <li class="nav-item">
-   <a class="nav-link pb-0" href="<?= base_url('admin/dashboard')?>">
-   <i class="fas fa-fw fa-paperclip"></i>
-    <span>Link Terkait</span></a>  
- </li>
 
 <hr class="sidebar-divider mt-3">
 

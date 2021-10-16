@@ -32,7 +32,7 @@
                                 <td> <?= $kontak[$i]['message']?> </td> 
                                 <td >                             
                                     <a href="<?= base_url('admin/delete_kontak/'.$kontak[$i]['id']); ?>" type="button"
-                                        class="badge badge-success" onclick="return confirm('Yakin Mau Hapus data ini ??')">Delete</a>
+                                        class="badge badge-danger" onclick="return confirm('Yakin Mau Hapus data ini ??')">Delete</a>
                                 </td>
                             </tr>
                         <?php  } ?>

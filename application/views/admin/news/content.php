@@ -34,6 +34,8 @@
                                 <td  width="5%">                             
                                     <a href="<?= base_url('admin/edit_news/'.$news[$i]['id_news']); ?>" type="button"
                                         class="badge badge-success">Edit</a>
+                                        <a href="<?= base_url('admin/delete_news/'.$news[$i]['id_news']); ?>" type="button"
+                                        class="badge badge-danger" onclick="return confirm('Yakin Mau Hapus data ini ??')">Delete</a>
                                 </td>
                             </tr>
                         <?php $no++; } ?>
