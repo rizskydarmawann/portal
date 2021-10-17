@@ -551,6 +551,15 @@ public function proses_edit_privasi(){
         redirect('admin/gallery');
 	}
 
+    public function delete_gallery()
+    {
+
+        $id = $this->uri->segment(3);
+        $this->load->model('Admin_model','gallery');
+		$this->gallery->delete_gallery($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Gallery berhasil dihapus ! </div>');
+        redirect('admin/gallery');
+    }
 
     
 
