@@ -44,10 +44,10 @@
           <ul>
             <li class="active"><a href="<?= base_url()?>">Beranda</a></li>
             <li class="drop-down">
-              <a href="<?= base_url()?>tentang">Tentang Kami</a>
+              <a href="">Tentang Kami</a>
               <ul>
-                <li><a href="sejarah.html">Sejarah</a></li>
-                <li><a href="vm.html">Visi dan Misi</a></li>
+               <li><a href="<?= base_url()?>sejarah">Sejarah</a></li>
+               <li><a href="<?= base_url()?>vm">Visi, Misi dan Tujuan</a></li>
                 <!-- <li class="drop-down">
                   <a href="#">Deep Drop Down</a>
                   <ul>
@@ -106,7 +106,7 @@
             <div class="component-news d-block">
               <div class="news-thumbnail">
                 <div
-                  class="news-image"
+                  class="news-image" title="<?=$gallery[$k]['title']?>"
                   style="background-image: url('<?=$gallery[$k]['foto']?>')"
                 >
                   <a

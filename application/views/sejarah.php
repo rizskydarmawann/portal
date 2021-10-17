@@ -44,10 +44,10 @@
           <ul>
             <li class="active"><a href="<?= base_url()?>">Beranda</a></li>
             <li class="drop-down">
-              <a href="<?= base_url()?>tentang">Tentang Kami</a>
+              <a href="">Tentang Kami</a>
               <ul>
                 <li><a href="<?= base_url()?>sejarah">Sejarah</a></li>
-                <li><a href="<?= base_url()?>vm">Visi dan Misi</a></li>
+                <li><a href="<?= base_url()?>vm">Visi, Misi dan Tujuan</a></li>
                 <!-- <li class="drop-down">
                   <a href="#">Deep Drop Down</a>
                   <ul>
@@ -88,7 +88,7 @@
     </div>
 
     <!-- navbar -->
-    <section class="section-sejarah">
+    <section class="section-sejarah pb-5">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -100,10 +100,10 @@
           <?= $sejarah[0]['description'];?>
           </div>
           <div class="col-3">
-            <img src="<?= base_url()?>assets/frontend/images/image3.jpg" alt="" />
-            <img src="<?= base_url()?>assets/frontend/images/image2.jpg" alt="" />
-            <img src="<?= base_url()?>assets/frontend/images/image3.jpg" alt="" />
-            <img src="<?= base_url()?>assets/frontend/images/image4.jpg" alt="" />
+            <img src="<?= base_url()?>assets/frontend/images/img3.jpg" alt="" />
+            <img src="<?= base_url()?>assets/frontend/images/img2.jpeg" alt="" />
+            <img src="<?= base_url()?>assets/frontend/images/img3.jpg" alt="" />
+            <img src="<?= base_url()?>assets/frontend/images/img1.jpeg" alt="" />
           </div>
         </div>
       </div>

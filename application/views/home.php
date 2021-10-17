@@ -55,7 +55,7 @@
               <a href="">Tentang Kami</a>
               <ul>
                 <li><a href="<?=base_url()?>sejarah">Sejarah</a></li>
-                <li><a href="<?=base_url()?>vm">Visi dan Misi</a></li>
+                <li><a href="<?= base_url()?>vm">Visi, Misi dan Tujuan</a></li>
                 <!-- <li class="drop-down">
                   <a href="#">Deep Drop Down</a>
                   <ul>

@@ -44,10 +44,10 @@
           <ul>
             <li class="active"><a href="<?= base_url()?>">Beranda</a></li>
             <li class="drop-down">
-              <a href="<?= base_url()?>tentang">Tentang Kami</a>
+              <a href="">Tentang Kami</a>
               <ul>
                 <li><a href="<?= base_url()?>sejarah">Sejarah</a></li>
-                <li><a href="<?= base_url()?>vm">Visi dan Misi</a></li>
+                <li><a href="<?= base_url()?>vm">Visi, Misi dan Tujuan</a></li>
                 <!-- <li class="drop-down">
                   <a href="#">Deep Drop Down</a>
                   <ul>
@@ -89,10 +89,10 @@
 
     <!-- navbar -->
     <!-- content -->
-    <section class="testimoni-menu">
-      <div class="container">
-        <div class="section-title">
-          <span>Testimoni</span>
+    <section class="testimoni-menu pb-5" >
+      <div class="container" >
+        <div class="section-title"x>
+          <span >Testimoni</span>
           <h2>Testimoni</h2>
         </div>
         <div class="row">

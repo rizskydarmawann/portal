@@ -44,10 +44,10 @@
           <ul>
             <li class="active"><a href="<?= base_url()?>">Beranda</a></li>
             <li class="drop-down">
-              <a href="<?= base_url()?>">Tentang Kami</a>
+              <a href="">Tentang Kami</a>
               <ul>
                 <li><a href="<?= base_url()?>sejarah">Sejarah</a></li>
-                <li><a href="<?= base_url()?>vm">Visi dan Misi</a></li>
+                <li><a href="<?= base_url()?>vm">Visi, Misi dan Tujuan</a></li>
                 <!-- <li class="drop-down">
                   <a href="#">Deep Drop Down</a>
                   <ul>
@@ -89,7 +89,7 @@
 
     <!-- navbar -->
     <!-- content -->
-    <section class="kebijakan-menu">
+    <section class="kebijakan-menu pb-5">
       <div class="container">
         <div class="section-title">
           <span>Jadwal Pendaftaran</span>
