@@ -408,7 +408,7 @@ endforeach
       <div class="container-fluid pt-4 pb-1 border-top">
         <div class="row justify-content-center">
           <div class="col-auto text-gray-500 font-weight-light">
-            2021 Copyright Project • All rights reserved • Made in Jakarta
+            <?= date("Y")?> Copyright Project • All rights reserved • Made in Jakarta
           </div>
         </div>
       </div>
