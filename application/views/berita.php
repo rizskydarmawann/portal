@@ -96,23 +96,24 @@
           <h2>News</h2>
         </div>
         <div class="row">
+          
 
         <?php 
             $jml = count($news);
             for($i=0;$i<$jml;$i++){
-
-              $tlh1 = $this->libs->ymdhis2dMonthy($news[$i]['created_at']);
-              $tanggal = date('d');
-              $bulan = $this->libs->Month(date('m'));
+              $tl = $this->libs->ymdhis2dMonthy($news[$i]['created_at']);
+              $tanggal = explode(" ", $tl);
+              $bulan = explode(" ", $tl);
+              // print_r (explode(" ",$tlh1));
+              // $bulan = $this->libs->Month(date('m'));
             ?>
-
-          <div class="col-lg-6 col-md-6 col-sm-2">
-            <div class="news-grid">
-              <div class="news-grid-image">
-                <img src="<?= $news[$i]['foto'];?>" />
-                <div class="news-grid-box">
-                  <h1><?=$tanggal?></h1>
-                  <p><?=$bulan?></p>
+            <div class="col-lg-6 col-md-6 col-sm-2">
+              <div class="news-grid">
+                <div class="news-grid-image">
+                  <img src="<?=$news[$i]['foto']?>" />
+                  <div class="news-grid-box">
+                    <h1><?= $tanggal[0]?></h1>
+                    <p><?= $bulan[1]?></p>
                 </div>
               </div>
               <div class="news-grid-txt">
@@ -135,8 +136,10 @@
               </div>
             </div>
           </div>
+          <!-- </div> -->
         <?php } ?>
         </div>
+        
       </div>
     </section>
     <!-- content -->
@@ -150,16 +153,16 @@
                 <h5>FEATURES</h5>
                 <ul class="list-unstyled">
                   <li>
-                    <a href=" "> Hukum</a>
+                    <a href="<?= base_url('sejarah'); ?>"> Sejarah </a>
                   </li>
                   <li>
-                    <a href=" ">Travel</a>
+                    <a href=" <?= base_url('vm'); ?> "> Visi Misi </a>
                   </li>
                   <li>
-                    <a href=" ">Property</a>
+                    <a href=" <?= base_url('biaya'); ?> "> Biaya Pendidikan </a>
                   </li>
                   <li>
-                    <a href=" ">Komveksi</a>
+                    <a href=" <?= base_url('jadwal'); ?> "> Jadwal Pendaftaran </a>
                   </li>
                 </ul>
               </div>
@@ -213,7 +216,7 @@
       <div class="container-fluid pt-4 pb-1 border-top">
         <div class="row justify-content-center">
           <div class="col-auto text-gray-500 font-weight-light">
-            2021 Copyright Project • All rights reserved • Made in Jakarta
+            <?= date("Y")?> Copyright Project • All rights reserved • Made in Jakarta
           </div>
         </div>
       </div>

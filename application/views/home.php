@@ -46,7 +46,7 @@
     <div class="menus">
       <div class="container d-flex align-items-center">
         <h1 class="logo mr-auto navbar-brand">
-          <a href="index.html">STIP</a>
+          <a href="<?=base_url()?>">STIP</a>
         </h1>
         <nav class="nav-menu d-none d-lg-block">
           <ul>
@@ -242,17 +242,19 @@ endforeach
             <?php 
             $jml = count($news);
             for($i=0;$i<$jml;$i++){
-              $tlh1 = $this->libs->ymdhis2dMonthy($news[$i]['created_at']);
-              $tanggal = date('d');
-              $bulan = $this->libs->Month(date('m'));
+              $tl = $this->libs->ymdhis2dMonthy($news[$i]['created_at']);
+              $tanggal = explode(" ", $tl);
+              $bulan = explode(" ", $tl);
+              // print_r (explode(" ",$tlh1));
+              // $bulan = $this->libs->Month(date('m'));
             ?>
 
               <div class="news-grid">
                 <div class="news-grid-image">
                   <img src="<?=$news[$i]['foto']?>" />
                   <div class="news-grid-box">
-                    <h1><?= $tanggal?></h1>
-                    <p><?= $bulan?></p>
+                    <h1><?= $tanggal[0]?></h1>
+                    <p><?= $bulan[1]?></p>
                   </div>
                 </div>
                 <div class="news-grid-txt">
@@ -408,7 +410,7 @@ endforeach
       <div class="container-fluid pt-4 pb-1 border-top">
         <div class="row justify-content-center">
           <div class="col-auto text-gray-500 font-weight-light">
-            2021 Copyright Project • All rights reserved • Made in Jakarta
+            <?= date("Y")?> Copyright Project • All rights reserved • Made in Jakarta
           </div>
         </div>
       </div>

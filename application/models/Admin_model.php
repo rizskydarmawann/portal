@@ -312,6 +312,13 @@ public function edit_gallery(){
 
 }
 
+public function delete_gallery($id){
+
+	$sql = $this->db->query("delete from gallery where id = '".$id."' ");
+	return $sql;
+}
+
+
 
 public function getalltestimoni()
 {

@@ -117,16 +117,16 @@
                 <h5>FEATURES</h5>
                 <ul class="list-unstyled">
                   <li>
-                    <a href=" "> Hukum</a>
+                    <a href="<?= base_url('sejarah'); ?>"> Sejarah </a>
                   </li>
                   <li>
-                    <a href=" ">Travel</a>
+                    <a href=" <?= base_url('vm'); ?> "> Visi Misi </a>
                   </li>
                   <li>
-                    <a href=" ">Property</a>
+                    <a href=" <?= base_url('biaya'); ?> "> Biaya Pendidikan </a>
                   </li>
                   <li>
-                    <a href=" ">Komveksi</a>
+                    <a href=" <?= base_url('jadwal'); ?> "> Jadwal Pendaftaran </a>
                   </li>
                 </ul>
               </div>
@@ -180,7 +180,7 @@
       <div class="container-fluid pt-4 pb-1 border-top">
         <div class="row justify-content-center">
           <div class="col-auto text-gray-500 font-weight-light">
-            2021 Copyright Project • All rights reserved • Made in Jakarta
+            <?= date("Y")?> Copyright Project • All rights reserved • Made in Jakarta
           </div>
         </div>
       </div>
