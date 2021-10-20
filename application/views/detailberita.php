@@ -112,7 +112,7 @@
               <ul class="list-inline">
                 <li>
                   <button
-                    onClick="window.open('http://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.developphp.com%2Fvideo%2FJavaScript%2FTrigger-CSS-Transitions-to-Control-Animations','sharer','toolbar=0,status=0,width=580,height=400');"
+                    onClick="window.open('http://www.facebook.com/sharer/sharer.php?u=<?= base_url('/index.php/detailberita/show/'.$this->uri->segment(3))?>','sharer','toolbar=0,status=0,width=580,height=400');"
                     title="Share on Facebook"
                     class="fb-button btn"
                   >
@@ -122,7 +122,7 @@
                 </li>
                 <li>
                   <button
-                    onClick="window.open('http://www.twitter.com/intent/tweet?url=https%3A%2F%2Fwww.developphp.com%2Fvideo%2FJavaScript%2FTrigger-CSS-Transitions-to-Control-Animations&amp;text=JavaScript - Trigger CSS Transitions to Control Animations','tweety','toolbar=0,status=0,width=550,height=450');"
+                    onClick="window.open('http://www.twitter.com/intent/tweet?url=<?= base_url('/index.php/detailberita/show/'.$this->uri->segment(3))?> &amp;text=STIP Jakarta','tweety','toolbar=0,status=0,width=550,height=450');"
                     title="Tweet this"
                     class="tw-button btn"
                   >
@@ -132,7 +132,7 @@
                 </li>
                 <li>
                   <button
-                    onClick="window.location='mailto:?subject=JavaScript - Trigger CSS Transitions to Control Animations&body=Hi, I thought you might like to see this: %0D%0Ahttps://www.developphp.com/video/JavaScript/Trigger-CSS-Transitions-to-Control-Animations';"
+                    onClick="window.location='mailto:?subject=JavaScript - Trigger CSS Transitions to Control Animations&body=Hi, I thought you might like to see this: %0D%0Ahttps:';"
                     title="Send this to an email contact"
                     class="gp-button btn"
                   >

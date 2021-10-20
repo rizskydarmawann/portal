@@ -96,23 +96,24 @@
           <h2>News</h2>
         </div>
         <div class="row">
+          
 
         <?php 
             $jml = count($news);
             for($i=0;$i<$jml;$i++){
-
-              $tlh1 = $this->libs->ymdhis2dMonthy($news[$i]['created_at']);
-              $tanggal = date('d');
-              $bulan = $this->libs->Month(date('m'));
+              $tl = $this->libs->ymdhis2dMonthy($news[$i]['created_at']);
+              $tanggal = explode(" ", $tl);
+              $bulan = explode(" ", $tl);
+              // print_r (explode(" ",$tlh1));
+              // $bulan = $this->libs->Month(date('m'));
             ?>
-
-          <div class="col-lg-6 col-md-6 col-sm-2">
-            <div class="news-grid">
-              <div class="news-grid-image">
-                <img src="<?= $news[$i]['foto'];?>" />
-                <div class="news-grid-box">
-                  <h1><?=$tanggal?></h1>
-                  <p><?=$bulan?></p>
+            <div class="col-lg-6 col-md-6 col-sm-2">
+              <div class="news-grid">
+                <div class="news-grid-image">
+                  <img src="<?=$news[$i]['foto']?>" />
+                  <div class="news-grid-box">
+                    <h1><?= $tanggal[0]?></h1>
+                    <p><?= $bulan[1]?></p>
                 </div>
               </div>
               <div class="news-grid-txt">
@@ -135,8 +136,10 @@
               </div>
             </div>
           </div>
+          <!-- </div> -->
         <?php } ?>
         </div>
+        
       </div>
     </section>
     <!-- content -->
