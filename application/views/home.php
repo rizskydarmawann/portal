@@ -46,7 +46,7 @@
     <div class="menus">
       <div class="container d-flex align-items-center">
         <h1 class="logo mr-auto navbar-brand">
-          <a href="index.html">STIP</a>
+          <a href="<?=base_url()?>">STIP</a>
         </h1>
         <nav class="nav-menu d-none d-lg-block">
           <ul>
