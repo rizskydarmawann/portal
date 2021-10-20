@@ -145,6 +145,7 @@ public function edit_news(){
 			'title' => $this->input->post('title'),
 			'description' => $this->input->post('description'),
 			'foto' => $url,
+			'modify' =>  $this->session->userdata('nama_panjang'),
 			'created_at' => date("Y-m-d H:i:s"),
 		);
 
