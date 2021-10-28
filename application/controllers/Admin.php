@@ -42,8 +42,10 @@ class Admin extends CI_Controller
     public function dashboard()
     {
         $data = array();
+        $this->load->model('Admin_model', 'summary');
+        $data['pengunjung'] = $this->summary->getallsummary();
         $this->load->view('admin/themes/header');
-        $this->load->view('admin/home/dashboard');
+        $this->load->view('admin/home/dashboard',$data);
         $this->load->view('admin/themes/footer');
     }
 

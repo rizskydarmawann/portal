@@ -26,7 +26,7 @@
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
     <div class="sidebar-brand-icon rotate-n-15">
-        <i class="fas fa-code"></i>
+        <img src="<?= base_url('assets/frontend/images/logo.png')?>" width="100">
     </div>
     <div class="sidebar-brand-text mx-3"><?=$this->config->item('applicationName')?></div>
 </a>
@@ -154,11 +154,11 @@
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                     aria-labelledby="userDropdown">
-                                    <!-- <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="<?= base_url('admin/update_profile')?>">
                                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        My Profile
-                                    </a> -->
-                                    <!-- <div class="dropdown-divider"></div> -->
+                                        Profile
+                                    </a>
+                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="<?= base_url('auth/logout')?>" data-toggle="modal"
                                         data-target="#logoutModal">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>

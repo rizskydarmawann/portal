@@ -3,9 +3,35 @@
 <!-- Begin Page Content -->
   <div class="container-fluid">
             <!-- Page Heading -->
-            <h5 class="h3 mb-4 text-gray-800">Selamat datang di dashboard <?=$this->config->item('applicationName')?></h5>
-
-
+          
+            <h2>Statistik Berita  </h2>
+            <div class="table-responsive">
+            <table class="table">
+            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Judul</th>
+                                <th>View</th>
+                                <th>Tanggal</th>
+                            </tr>
+            </thead>
+            <tbody>
+          </div>
+                    <?php 
+                      $jumlah = count($pengunjung);
+                      for($i=0;$i<$jumlah;$i++){
+                    ?>
+                             <tr>
+                                <th><?= $pengunjung[$i]['id_news']?></th>
+                                <th><?= $pengunjung[$i]['title']?></th>
+                                <th><?= $pengunjung[$i]['jumlah']?></th>
+                                <th><?= $pengunjung[$i]['created_at']?></th>
+                            </tr>
+                    <?php
+                      }
+                    ?>
+                    </tbody>
+ </table>
         </div>
         <!-- /.container-fluid -->
         </div>

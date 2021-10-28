@@ -214,6 +214,13 @@ public function getallcontact()
 
 }
 
+public function getallsummary()
+{
+	$sql = $this->db->query("select id_news,title,created_at,hit,sum(hit) as jumlah from news group by created_at ");
+	$data = $sql->result_array();
+	return $data;
+
+}
 
 public function getallgallery()
 {
