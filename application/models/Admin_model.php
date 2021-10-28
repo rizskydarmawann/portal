@@ -735,23 +735,9 @@ public function update_forgotpassword(){
 
 
 
-public function getfuture(){
+public function getfooter(){
 
-	$sql = $this->db->query("select * from connected limit 0,4")->result_array();
-	return $sql;
-
-}
-
-public function getconnect(){
-
-	$sql = $this->db->query("select * from connected limit 4,3")->result_array();
-	return $sql;
-
-}
-
-public function getmap(){
-
-	$sql = $this->db->query("select * from connected limit 7,1")->result_array();
+	$sql = $this->db->query("select * from connected ")->result_array();
 	return $sql;
 
 }
