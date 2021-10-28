@@ -6,20 +6,12 @@
             <div class="card shadow mb-4">
                 <div class="card-body">
                 <?= $this->session->flashdata('message');?>
-
-                <div class=" pb-3 d-flex flex-row-reverse">
-                    <a href=" <?php echo base_url('admin/add_user'); ?>" class=" btn btn-primary">tambah</a>
-                </div>
-
-
                     <table class="table table-striped table-bordered table-sm"  width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Username</th>
-                                <th>Password</th>
-                                <th>Nama Panjang</th>
-                                <th>Status</th>
+                                <th>Name</th>
+                                <th>Link</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -27,20 +19,16 @@
                         <tbody>
                         <?php 
                       
-                        $jumlah = count($user);
+                        $jumlah = count($connected);
                         for($i=0;$i<$jumlah;$i++){
                         ?>
                             <tr>
-                                <td> <?= $user[$i]['id_user']?></td>
-                                <td ><?= $user[$i]['username']?></td>
-                                <td> <?= $user[$i]['password']?> </td>
-                                <td> <?= $user[$i]['nama_panjang']?> </td> 
-                                <td> <?= $user[$i]['status']?> </td> 
+                                <td> <?= $connected[$i]['id']?></td>
+                                <td ><?= $connected[$i]['name']?></td>
+                                <td> <a href="<?= $connected[$i]['link']?>" target="_blank"><?= substr($connected[$i]['link'],0,40)?> ... </a></td>
                                 <td>
-                                <a href="<?= base_url('admin/edit_user/'.$user[$i]['id_user']); ?>" type="button"
+                                <a href="<?= base_url('admin/edit_connected/'.$connected[$i]['id']); ?>" type="button"
                                         class="badge badge-warning">Edit</a>                             
-                                    <a href="<?= base_url('admin/delete_user/'.$user[$i]['id_user']); ?>" type="button"
-                                        class="badge badge-danger" onclick="return confirm('Yakin Mau Hapus data ini ??')">Delete</a>
                                 </td>
                             </tr>
                         <?php  } ?>

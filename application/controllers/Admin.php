@@ -701,5 +701,77 @@ public function proses_edit_jadwal(){
 
 
 
+public function user()
+{
+    $data['title'] = 'Pengguna Aplikasi';
+    $this->load->model('Admin_model','user');
+    $data['user'] = $this->user->getalluser();
+    $this->load->view('admin/themes/header');
+    $this->load->view('admin/user/content', $data);
+    $this->load->view('admin/themes/footer');
+}
+
+
+public function update_profile()
+{
+    $data['title'] = 'Profile Pengguna';
+    $this->load->model('Admin_model','user');
+    $data['user'] = $this->user->getprofile();
+    $this->load->view('admin/themes/header');
+    $this->load->view('admin/user/profile', $data);
+    $this->load->view('admin/themes/footer');
+}
+
+
+
+
+public function save_profile()
+{
+    $this->load->model('Admin_model','profile');
+    $this->profile->save_profile();
+    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Profile berhasil diupdate ! </div>');
+    redirect(base_url('admin/update_profile'));
+
+}
+
+
+
+
+
+
+public function connected()
+{
+    $data['title'] = 'Connected';
+    $this->load->model('Admin_model','connected');
+    $data['connected'] = $this->connected->getallconnected();
+    $this->load->view('admin/themes/header');
+    $this->load->view('admin/connected/content', $data);
+    $this->load->view('admin/themes/footer');
+}
+
+
+public function edit_connected()
+{
+    $data['title'] = 'Edit Connected';
+    $id = $this->uri->segment(3);
+    $this->load->model('Admin_model','connected');
+    $data['detail'] = $this->connected->getdetailconnected($id);
+    $this->load->view('admin/themes/header');
+    $this->load->view('admin/connected/edit', $data);
+    $this->load->view('admin/themes/footer');
+}
+
+
+
+public function update_connected()
+{
+    $this->load->model('Admin_model','conn');
+    $this->conn->update_connected();
+    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Connected berhasil diupdate ! </div>');
+    redirect(base_url('admin/connected'));
+
+}
+
+
 
 }

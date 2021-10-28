@@ -572,6 +572,102 @@ public function delete_kontak($id){
 	return $sql;
 }
 
+public function getalluser(){
+
+	$sql = $this->db->query("select * from user ")->result_array();
+	return $sql;
+
+}
+
+
+public function insert_user(){
+
+	$sql = $this->db->query("select * from user ")->result_array();
+	return $sql;
+
+}
+
+public function update_user(){
+
+	$sql = $this->db->query("select * from user ")->result_array();
+	return $sql;
+
+}
+
+public function delete_user(){
+
+	$sql = $this->db->query("select * from user ")->result_array();
+	return $sql;
+
+}
+
+
+
+
+public function getallconnected(){
+
+	$sql = $this->db->query("select * from connected ")->result_array();
+	return $sql;
+
+}
+
+public function getdetailconnected($id){
+
+	$sql = $this->db->query("select * from connected where id = '".$id."'")->result_array();
+	return $sql;
+
+}
+
+
+public function update_connected(){
+
+	$data = array(
+		'name' => $this->input->post('name'),
+		'link' => $this->input->post('link')
+		);
+
+	$this->db->where('id',$this->input->post('id'));
+	$this->db->update('connected', $data);
+
+}
+
+
+
+public function getprofile(){
+
+	$sql = $this->db->query("select * from user where id_user = '".$this->session->userdata('id_user')."'")->result_array();
+	return $sql;
+
+}
+
+public function save_profile(){
+
+	$foto = str_replace(" ", "_", $_FILES['foto']['name']);
+	$url = base_url('assets/backend/upload/user/' . $foto);
+		$tujuan_file = realpath(APPPATH . '../assets/backend/upload/user/');
+		$konfigurasi = array(
+			'allowed_types' => 'jpg|jpeg|png|JPG',
+			'upload_path' => $tujuan_file,
+			'remove_spaces' => true,
+			'file_name' => $foto,
+		);
+
+		$this->load->library('upload', $konfigurasi);
+		$this->upload->do_upload('foto');
+		$this->upload->data();
+
+	$data = array(
+		'username' => $this->input->post('username'),
+		'password' => $this->input->post('password'),
+		'nama_panjang' => $this->input->post('nama_panjang'),
+		'status' => $this->input->post('status'),
+		'foto'=> $url
+		);
+
+	$this->db->where('id_user',$this->session->userdata('id_user'));
+	$this->db->update('user', $data);
+
+}
 
 
 } ?>

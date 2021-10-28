@@ -25,12 +25,19 @@
                         $no=1;
                         $jumlah = count($news);
                         for($i=0;$i<$jumlah;$i++){
+                        $kalimat=$news[$i]['description'];
+                        $posisi=strpos($kalimat,"data:image");
+                        if($posisi !== FALSE){
+                                $desc = "Description terlalu panjang sehingga foto/video/file tidak di tampilkan di view disini, tapi di tampilkan di form edit";
+                        }else{
+                                $desc = substr($news[$i]['description'],0,300);
+                        }
                         ?>
                             <tr>
                                 <td> <?= $no?></td>
                                 <td width="30%"><?= $news[$i]['title']?></td>
                                 <td><img src="<?= $news[$i]['foto']?>" class="img-fluid img-thumbnai" width="40%" ></td>
-                                <td> <?= substr($news[$i]['description'],0,300)?>...</td> 
+                                <td> <?= $desc ?>...</td> 
                                 <td  width="5%">                             
                                     <a href="<?= base_url('admin/edit_news/'.$news[$i]['id_news']); ?>" type="button"
                                         class="badge badge-success">Edit</a>

@@ -5,40 +5,36 @@
             <h5 class="h3 mb-4 text-gray-800"><?=$title;?></h5>
             <div class="card shadow mb-4">
                 <div class="card-body">
+                
                 <?= $this->session->flashdata('message');?>
-                    <table class="table table-striped table-bordered table-sm"  width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Subject</th>
-                                <th>Message</th>
-                                <th>Delete</th>
-                            </tr>
-                        </thead>
+                                    <form method="POST" action="<?= base_url('admin/save_profile')?>" enctype="multipart/form-data">
+                                            <br>
+                                         
+                                            <br>
+                                            <div class="form-group">
+                                                <label>Username</label>
+                                                <input type="text" class="form-control" name="username" value="<?= $user[0]['username'];?>"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Password</label>
+                                                <input type="text" class="form-control" name="password" value="<?= $user[0]['password'];?>"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Nama Panjang</label>
+                                                <input type="text" class="form-control" name="nama_panjang" value="<?= $user[0]['nama_panjang'];?>"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Foto</label>
+                                                <input type="file" class="form-control" name="foto" required/>
+                                            </div>
+                                            <div class="row col-md-6">
+                                               
+                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                            </div>
+                                            <br>
+                                            </form>
 
-                        <tbody>
-                        <?php 
-                      
-                        $jumlah = count($kontak);
-                        for($i=0;$i<$jumlah;$i++){
-                        ?>
-                            <tr>
-                                <td> <?= $kontak[$i]['id']?></td>
-                                <td ><?= $kontak[$i]['name']?></td>
-                                <td> <?= $kontak[$i]['email']?> </td>
-                                <td> <?= $kontak[$i]['subject']?> </td> 
-                                <td> <?= $kontak[$i]['message']?> </td> 
-                                <td >                             
-                                    <a href="<?= base_url('admin/delete_kontak/'.$kontak[$i]['id']); ?>" type="button"
-                                        class="badge badge-danger" onclick="return confirm('Yakin Mau Hapus data ini ??')">Delete</a>
-                                </td>
-                            </tr>
-                        <?php  } ?>
-                        </tbody>
 
-                    </table>
                 </div>
             </div>
         </div>
