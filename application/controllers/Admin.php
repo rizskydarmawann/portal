@@ -822,4 +822,19 @@ public function update_connected()
 
 
 
+public function forgotpassword()
+{
+    $this->load->view('admin/forgotpassword');
+}
+
+
+public function updatepassword()
+{
+    $this->load->model('Admin_model','forgot');
+    $this->forgot->update_forgotpassword();
+    redirect(base_url('admin'));
+}
+
+
+
 }

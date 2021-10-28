@@ -722,4 +722,39 @@ public function save_profile(){
 }
 
 
+
+public function update_forgotpassword(){
+
+	$data = array(
+		'password' => $this->input->post('password'),
+		);
+	$this->db->where('username',$this->input->post('username'));
+	$this->db->update('user', $data);
+
+}
+
+
+
+public function getfuture(){
+
+	$sql = $this->db->query("select * from connected limit 0,4")->result_array();
+	return $sql;
+
+}
+
+public function getconnect(){
+
+	$sql = $this->db->query("select * from connected limit 4,3")->result_array();
+	return $sql;
+
+}
+
+public function getmap(){
+
+	$sql = $this->db->query("select * from connected limit 7,1")->result_array();
+	return $sql;
+
+}
+
+
 } ?>

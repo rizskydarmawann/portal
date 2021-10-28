@@ -112,7 +112,7 @@ span.psw {
 		  </div>
 
 		  <div class="container" style="background-color:#f1f1f1; height: 50px">
-			<span class="psw">Forgot <a href="#">password?</a></span>
+			<span class="psw">Forgot <a href="<?= base_url('admin/forgotpassword');?>">password?</a></span>
 		  </div>
 		</form>
 

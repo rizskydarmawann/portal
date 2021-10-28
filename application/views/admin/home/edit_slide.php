@@ -27,7 +27,6 @@
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input"  name="foto" id="foto" />
                                 <label class="custom-file-label" for="foto">Pilih Gambar</label>
-                                
                             </div>
                         </div>
                         </div>
