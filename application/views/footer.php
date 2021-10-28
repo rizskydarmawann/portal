@@ -3,7 +3,7 @@
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="row">
-                        <div class="col-12 col-lg-3">
+                        <div class="col-12 col-lg-4">
                             <h5>FEATURES</h5>
                             <ul class="list-unstyled">
                                 <li>
@@ -21,25 +21,9 @@
                             </ul>
                         </div>
 
-                        <div class="col-12 col-lg-3">
+                       
+                        <div class="col-12 col-lg-4">
                             <h5>GET CONNECTED</h5>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a href=" ">Ciputat Timur</a>
-                                </li>
-                                <li>
-                                    <a href=" ">Tangerang Selatan</a>
-                                </li>
-                                <li>
-                                    <a href=" ">0851-5758-xxxx</a>
-                                </li>
-                                <li>
-                                    <a href=" ">darmawan@gmail.com</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-12 col-lg-3">
-                            <h5>SOCIAL MEDIA</h5>
                             <ul class="list-unstyled">
                                 <li>
                                     <a href=" "><i class="icofont-instagram"></i> stipjakarta</a>
@@ -52,7 +36,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-12 col-lg-3">
+                        <div class="col-12 col-lg-4">
                             <h5>LOCATION</h5>
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.6887123064917!2d106.75158631431097!3d-6.304567863454402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef103911afdd%3A0xaa8cbd97d3e66313!2sHANASTI%20%26%20REKAN!5e0!3m2!1sid!2sid!4v1594569142660!5m2!1sid!2sid "

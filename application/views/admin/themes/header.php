@@ -111,6 +111,18 @@
 
 
 
+ <li class="nav-item">
+   <a class="nav-link pb-0" href="<?= base_url('admin/connected')?>">
+   <i class="fas fa-fw fa-spinner"></i>
+    <span>Connected</span></a>  
+ </li>
+
+ <li class="nav-item">
+   <a class="nav-link pb-0" href="<?= base_url('admin/user')?>">
+   <i class="fas fa-fw fa-user"></i>
+    <span>User</span></a>  
+ </li>
+
 
 <hr class="sidebar-divider mt-3">
 
