@@ -580,24 +580,77 @@ public function getalluser(){
 }
 
 
-public function insert_user(){
+public function save_user(){
 
-	$sql = $this->db->query("select * from user ")->result_array();
+	$foto = str_replace(" ", "_", $_FILES['foto']['name']);
+	$url = base_url('assets/backend/upload/user/' . $foto);
+		$tujuan_file = realpath(APPPATH . '../assets/backend/upload/user/');
+		$konfigurasi = array(
+			'allowed_types' => 'jpg|jpeg|png|JPG',
+			'upload_path' => $tujuan_file,
+			'remove_spaces' => true,
+			'file_name' => $foto,
+		);
+
+		$this->load->library('upload', $konfigurasi);
+		$this->upload->do_upload('foto');
+		$this->upload->data();
+
+	$data = array(
+		'username' => $this->input->post('username'),
+		'password' => $this->input->post('password'),
+		'nama_panjang' => $this->input->post('nama_panjang'),
+		'status' => $this->input->post('status'),
+		'foto'=> $url
+		);
+
+	$this->db->insert('user', $data);
+
+}
+
+public function select_user($id){
+
+	$sql = $this->db->query("select * from user where id_user = '".$id."' ")->result_array();
 	return $sql;
 
 }
+
 
 public function update_user(){
+	$id = $this->input->post('id_user');
+	$foto = str_replace(" ", "_", $_FILES['foto']['name']);
+	if(!empty($foto)){
+	$url = base_url('assets/backend/upload/user/' . $foto);
+		$tujuan_file = realpath(APPPATH . '../assets/backend/upload/user/');
+		$konfigurasi = array(
+			'allowed_types' => 'jpg|jpeg|png|JPG',
+			'upload_path' => $tujuan_file,
+			'remove_spaces' => true,
+			'file_name' => $foto,
+		);
 
-	$sql = $this->db->query("select * from user ")->result_array();
-	return $sql;
+		$this->load->library('upload', $konfigurasi);
+		$this->upload->do_upload('foto');
+		$this->upload->data();
 
-}
+	$data = array(
+		'username' => $this->input->post('username'),
+		'password' => $this->input->post('password'),
+		'nama_panjang' => $this->input->post('nama_panjang'),
+		'status' => $this->input->post('status'),
+		'foto'=> $url
+		);
 
-public function delete_user(){
+	}else{
 
-	$sql = $this->db->query("select * from user ")->result_array();
-	return $sql;
+		$data = array(
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password'),
+			'nama_panjang' => $this->input->post('nama_panjang')
+			);
+	}
+	$this->db->where('id_user',$id);
+	$this->db->update('user', $data);
 
 }
 
@@ -660,7 +713,6 @@ public function save_profile(){
 		'username' => $this->input->post('username'),
 		'password' => $this->input->post('password'),
 		'nama_panjang' => $this->input->post('nama_panjang'),
-		'status' => $this->input->post('status'),
 		'foto'=> $url
 		);
 

@@ -19,6 +19,7 @@
                                 <th>Username</th>
                                 <th>Password</th>
                                 <th>Nama Panjang</th>
+                                <th>Foto</th>
                                 <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
@@ -35,12 +36,12 @@
                                 <td ><?= $user[$i]['username']?></td>
                                 <td> <?= $user[$i]['password']?> </td>
                                 <td> <?= $user[$i]['nama_panjang']?> </td> 
+                                <td><img src="<?= $user[$i]['foto']?> " width="100"></td> 
                                 <td> <?= $user[$i]['status']?> </td> 
                                 <td>
                                 <a href="<?= base_url('admin/edit_user/'.$user[$i]['id_user']); ?>" type="button"
                                         class="badge badge-warning">Edit</a>                             
-                                    <a href="<?= base_url('admin/delete_user/'.$user[$i]['id_user']); ?>" type="button"
-                                        class="badge badge-danger" onclick="return confirm('Yakin Mau Hapus data ini ??')">Delete</a>
+                                    
                                 </td>
                             </tr>
                         <?php  } ?>

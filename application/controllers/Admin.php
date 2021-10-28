@@ -29,6 +29,7 @@ class Admin extends CI_Controller
                 'id_user' => $data['log'][0]['id_user'],
                 'username' => $data['log'][0]['username'],
                 'nama_panjang' => $data['log'][0]['nama_panjang'],
+                'foto' => $data['log'][0]['foto'],
                 'status' => $data['log'][0]['status'],
             );
             $this->session->set_userdata($newdata);
@@ -710,6 +711,53 @@ public function user()
     $this->load->view('admin/user/content', $data);
     $this->load->view('admin/themes/footer');
 }
+
+
+public function add_user()
+{
+    $data['title'] = 'Pengguna Aplikasi';
+    $this->load->view('admin/themes/header');
+    $this->load->view('admin/user/tambah_user', $data);
+    $this->load->view('admin/themes/footer');
+}
+
+
+
+public function insert_user()
+{
+    $this->load->model('Admin_model','user');
+    $this->user->save_user();
+    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">User berhasil di tambah ! </div>');
+    redirect(base_url('admin/user'));
+
+}
+
+
+
+
+public function edit_user()
+{
+    $data['title'] = 'Pengguna Aplikasi';
+    $id= $this->uri->segment(3);
+    $this->load->model('Admin_model','user');
+    $data['detail'] = $this->user->select_user($id);
+    $this->load->view('admin/themes/header');
+    $this->load->view('admin/user/edit_user', $data);
+    $this->load->view('admin/themes/footer');
+}
+
+
+
+public function update_user()
+{
+    $this->load->model('Admin_model','user');
+    $this->user->update_user();
+    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">User berhasil di Update ! </div>');
+    redirect(base_url('admin/user'));
+
+}
+
+
 
 
 public function update_profile()

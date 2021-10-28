@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to Backend</title>
+	<title>STIP JAKARTA</title>
 
 	<style type="text/css">
 body{
@@ -89,14 +89,14 @@ span.psw {
 <body>
 
 <div id="container">
-	<h1 align="center">Welcome to Backend!</h1>
+	<h1 align="center">STIP JAKARTA</h1>
 
 	<div id="body">
 
 
 		<form action="<?= base_url('admin/proses_login')?>" method="post" id="form_login">
 		  <div class="imgcontainer">
-			<img src="<?= base_url()?>assets/backend/img/avatar2.png" alt="Avatar" class="avatar">
+			<img src="<?= base_url()?>assets/logo.png" alt="Avatar" class="avatar">
 		  </div>
 
 		  <div class="container">
@@ -108,13 +108,10 @@ span.psw {
      
 
 			<button type="submit">Login</button>
-			<label>
-			  <input type="checkbox" checked="checked" name="remember"> Remember me
-			</label>
+		
 		  </div>
 
-		  <div class="container" style="background-color:#f1f1f1">
-			<button type="button" class="cancelbtn">Cancel</button>
+		  <div class="container" style="background-color:#f1f1f1; height: 50px">
 			<span class="psw">Forgot <a href="#">password?</a></span>
 		  </div>
 		</form>
