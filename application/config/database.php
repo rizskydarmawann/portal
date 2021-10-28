@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'portal',
+	'hostname' => 'baznaspayakumbuh.com',
+	'username' => 'stip_portal',
+	'password' => 'Barlok15@',
+	'database' => 'baznasp2_portal',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

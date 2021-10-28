@@ -35,57 +35,7 @@
     </header>
     <!-- header -->
     <!-- navbar -->
-    <div class="menus">
-      <div class="container d-flex align-items-center">
-        <h1 class="logo mr-auto navbar-brand">
-          <a href="<?= base_url();?>">STIP</a>
-        </h1>
-        <nav class="nav-menu d-none d-lg-block">
-          <ul>
-            <li class="active"><a href="<?= base_url()?>">Beranda</a></li>
-            <li class="drop-down">
-              <a href="#">Tentang Kami</a>
-              <ul>
-                <li><a href="<?= base_url()?>sejarah">Sejarah</a></li>
-                <li><a href="<?= base_url()?>vm">Visi, Misi dan Tujuan</a></li>
-                <!-- <li class="drop-down">
-                  <a href="#">Deep Drop Down</a>
-                  <ul>
-                    <li><a href="#">Deep Drop Down 1</a></li>
-                    <li><a href="#">Deep Drop Down 2</a></li>
-                    <li><a href="#">Deep Drop Down 3</a></li>
-                    <li><a href="#">Deep Drop Down 4</a></li>
-                    <li><a href="#">Deep Drop Down 5</a></li>
-                  </ul>
-                </li> -->
-              </ul>
-            </li>
-            <li class="drop-down">
-              <a href="">Akademik</a>
-              <ul>
-                <li><a href="<?= base_url()?>galery">Galeri</a></li>
-                <li><a href="<?= base_url()?>testimoni">Testimoni</a></li>
-                <li><a href="<?= base_url()?>animo">Animo & Daya Tampung</a></li>
-                <li><a href="<?= base_url()?>biaya">Biaya Pendidikan</a></li>
-                <li><a href="<?= base_url()?>jadwal">Jadwal Pendaftaran</a></li>
-                <!-- <li class="drop-down">
-                  <a href="#">Deep Drop Down</a>
-                  <ul>
-                    <li><a href="#">Deep Drop Down 1</a></li>
-                    <li><a href="#">Deep Drop Down 2</a></li>
-                    <li><a href="#">Deep Drop Down 3</a></li>
-                    <li><a href="#">Deep Drop Down 4</a></li>
-                    <li><a href="#">Deep Drop Down 5</a></li>
-                  </ul>
-                </li> -->
-              </ul>
-            </li>
-            <li><a href="<?= base_url()?>kebijakan">Kebijakan Privasi</a></li>
-            <li><a href="<?= base_url()?>kontak">Kontak</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+    <?php include APPPATH."/views/menu.php";?>
 
     <!-- navbar -->
 
@@ -112,7 +62,7 @@
               <ul class="list-inline">
                 <li>
                   <button
-                    onClick="window.open('http://www.facebook.com/sharer/sharer.php?u=<?= base_url('/index.php/detailberita/show/'.$this->uri->segment(3))?>','sharer','toolbar=0,status=0,width=580,height=400');"
+                    onClick="window.open('http://www.facebook.com/sharer/sharer.php?u=<?= base_url('detailberita/show/'.$this->uri->segment(3))?>','sharer','toolbar=0,status=0,width=580,height=400');"
                     title="Share on Facebook"
                     class="fb-button btn"
                   >
@@ -122,7 +72,7 @@
                 </li>
                 <li>
                   <button
-                    onClick="window.open('http://www.twitter.com/intent/tweet?url=<?= base_url('/index.php/detailberita/show/'.$this->uri->segment(3))?> &amp;text=STIP Jakarta','tweety','toolbar=0,status=0,width=550,height=450');"
+                    onClick="window.open('http://www.twitter.com/intent/tweet?url=<?= base_url('detailberita/show/'.$this->uri->segment(3))?> &amp;text=STIP Jakarta','tweety','toolbar=0,status=0,width=550,height=450');"
                     title="Tweet this"
                     class="tw-button btn"
                   >
@@ -132,7 +82,7 @@
                 </li>
                 <li>
                   <button
-                    onClick="window.location='mailto:?subject=JavaScript - Trigger CSS Transitions to Control Animations&body=Hi, I thought you might like to see this: %0D%0Ahttps:';"
+                    onClick="window.location='mailto:?subject=<?=$news[0]['title']?>&body=Saya Tertarik Artikel Ini';"
                     title="Send this to an email contact"
                     class="gp-button btn"
                   >
@@ -239,83 +189,7 @@
         </div>
       </div>
     </section>
-    <footer class="section-footer mb-4 border-top">
-      <div class="container pt-5 pb-5">
-        <div class="row justify-content-center">
-          <div class="col-12">
-            <div class="row">
-              <div class="col-12 col-lg-3">
-                <h5>FEATURES</h5>
-                <ul class="list-unstyled">
-                  <li>
-                    <a href="<?= base_url('sejarah'); ?>"> Sejarah </a>
-                  </li>
-                  <li>
-                    <a href=" <?= base_url('vm'); ?> "> Visi Misi </a>
-                  </li>
-                  <li>
-                    <a href=" <?= base_url('biaya'); ?> "> Biaya Pendidikan </a>
-                  </li>
-                  <li>
-                    <a href=" <?= base_url('jadwal'); ?> "> Jadwal Pendaftaran </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="col-12 col-lg-3">
-                <h5>GET CONNECTED</h5>
-                <ul class="list-unstyled">
-                  <li>
-                    <a href=" ">Ciputat Timur</a>
-                  </li>
-                  <li>
-                    <a href=" ">Tangerang Selatan</a>
-                  </li>
-                  <li>
-                    <a href=" ">0851-5758-xxxx</a>
-                  </li>
-                  <li>
-                    <a href=" ">darmawan@gmail.com</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-12 col-lg-3">
-                <h5>SOCIAL MEDIA</h5>
-                <ul class="list-unstyled">
-                  <li>
-                    <a href=" "
-                      ><i class="icofont-instagram"></i> stipjakarta</a
-                    >
-                  </li>
-                  <li>
-                    <a href=" "><i class="icofont-facebook"></i> stipjakarta</a>
-                  </li>
-                  <li>
-                    <a href=" "><i class="icofont-twitter"> stipjakarta</i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-12 col-lg-3">
-                <h5>LOCATION</h5>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.6887123064917!2d106.75158631431097!3d-6.304567863454402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef103911afdd%3A0xaa8cbd97d3e66313!2sHANASTI%20%26%20REKAN!5e0!3m2!1sid!2sid!4v1594569142660!5m2!1sid!2sid "
-                  frameborder="0 "
-                  style="border: 0; width: 100%; height: 100px"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid pt-4 pb-1 border-top">
-        <div class="row justify-content-center">
-          <div class="col-auto text-gray-500 font-weight-light">
-            <?= date("Y")?> Copyright Project • All rights reserved • Made in Jakarta
-          </div>
-        </div>
-      </div>
-    </footer>
+    <?php include APPPATH."/views/footer.php";?>
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
     <script src="<?= base_url()?>assets/frontend/js/jquery-3.3.1.min.js"></script>
