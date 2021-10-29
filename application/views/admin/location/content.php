@@ -6,13 +6,14 @@
             <div class="card shadow mb-4">
                 <div class="card-body">
                 <?= $this->session->flashdata('message');?>
+                <div style="overflow-x:auto;"> 
                     <table class="table table-striped table-bordered table-sm"  width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th width="10%">ID</th>
-                                <th width="10%">Name</th>
-                                <th  width="70%">Link</th>
-                                <th width="10%">Aksi</th>
+                                <th >ID</th>
+                                <th >Name</th>
+                                <th >Link</th>
+                                <th >Aksi</th>
                             </tr>
                         </thead>
 
@@ -24,10 +25,10 @@
                            
                         ?>
                             <tr>
-                                <td width="10%"> <?= $location[$i]['id']?></td>
-                                <td width="10%"><?= $location[$i]['name']?></td>
-                                <td width="700%"><?= $location[$i]['link']?></td>
-                                <td width="10%">
+                                <td > <?= $location[$i]['id']?></td>
+                                <td><?= $location[$i]['name']?></td>
+                                <td ><?= $location[$i]['link']?></td>
+                                <td >
                                 <a href="<?= base_url('admin/edit_location/'.$location[$i]['id']); ?>" type="button"
                                         class="badge badge-warning">Edit</a>                             
                                 </td>
@@ -36,6 +37,7 @@
                         </tbody>
 
                     </table>
+                        </div>
                 </div>
             </div>
         </div>
