@@ -820,6 +820,72 @@ public function update_connected()
 
 }
 
+public function feature()
+{
+    $data['title'] = 'Feature';
+    $this->load->model('Admin_model','feature');
+    $data['feature'] = $this->feature->getallfeature();
+    $this->load->view('admin/themes/header');
+    $this->load->view('admin/feature/content', $data);
+    $this->load->view('admin/themes/footer');
+}
+
+
+public function edit_feature()
+{
+    $data['title'] = 'Edit Feature';
+    $id = $this->uri->segment(3);
+    $this->load->model('Admin_model','feature');
+    $data['detail'] = $this->feature->getdetailfeature($id);
+    $this->load->view('admin/themes/header');
+    $this->load->view('admin/feature/edit', $data);
+    $this->load->view('admin/themes/footer');
+}
+
+
+
+public function update_feature()
+{
+    $this->load->model('Admin_model','feature');
+    $this->feature->update_feature();
+    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Feature berhasil diupdate ! </div>');
+    redirect(base_url('admin/feature'));
+
+}
+
+public function location()
+{
+    $data['title'] = 'Location';
+    $this->load->model('Admin_model','location');
+    $data['location'] = $this->location->getalllocation();
+    $this->load->view('admin/themes/header');
+    $this->load->view('admin/location/content', $data);
+    $this->load->view('admin/themes/footer');
+}
+
+
+public function edit_location()
+{
+    $data['title'] = 'Edit Location';
+    $id = $this->uri->segment(3);
+    $this->load->model('Admin_model','location');
+    $data['detail'] = $this->location->getdetaillocation($id);
+    $this->load->view('admin/themes/header');
+    $this->load->view('admin/location/edit', $data);
+    $this->load->view('admin/themes/footer');
+}
+
+
+
+public function update_location()
+{
+    $this->load->model('Admin_model','location');
+    $this->location->update_location();
+    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Location berhasil diupdate ! </div>');
+    redirect(base_url('admin/location'));
+
+}
+
 
 
 public function forgotpassword()

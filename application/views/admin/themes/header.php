@@ -96,6 +96,8 @@
     </div>
 </li>
 
+
+
 <li class="nav-item">
    <a class="nav-link pb-0" href="<?= base_url('admin/edit_privasi')?>">
    <i class="fas fa-fw fa-info"></i>
@@ -109,13 +111,29 @@
     <span>Kontak</span></a>  
  </li>
 
+ <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFooter"
+        aria-expanded="true" aria-controls="collapseFooter">
+        <i class="fas fa-fw fa-folder"></i>
+        <span>Footer</span>
+    </a>
+    <div id="collapseFooter" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Pages:</h6>
+            <a class="collapse-item" href="<?= base_url('admin/feature') ?>">Feature</a>
+            <a class="collapse-item" href="<?= base_url('admin/connected') ?>"> Connected </a>
+            <a class="collapse-item" href="<?= base_url('admin/location') ?>"> Location</a>
+        </div>
+    </div>
+</li>
 
 
+<!-- 
  <li class="nav-item">
    <a class="nav-link pb-0" href="<?= base_url('admin/connected')?>">
    <i class="fas fa-fw fa-spinner"></i>
     <span>Connected</span></a>  
- </li>
+ </li> -->
 
  <li class="nav-item">
    <a class="nav-link pb-0" href="<?= base_url('admin/user')?>">

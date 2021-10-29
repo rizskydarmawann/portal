@@ -7,15 +7,11 @@
                 <div class="card-body">
                 
                 <?= $this->session->flashdata('message');?>
-                                    <form method="POST" action="<?= base_url('admin/update_connected')?>" enctype="multipart/form-data">
+                                    <form method="POST" action="<?= base_url('admin/update_feature')?>" enctype="multipart/form-data">
                                     <input type="hidden" name="id" value="<?= $detail[0]['id']?>">
                                             <br>
                                          
                                             <br>
-                                            <div class="form-group">
-                                                <label>Icon</label>
-                                                <input type="text" class="form-control" name="icon" value="<?= $detail[0]['icon']?>"/>
-                                            </div>
                                             <div class="form-group">
                                                 <label>Name</label>
                                                 <input type="text" class="form-control" name="name" value="<?= $detail[0]['name']?>"/>

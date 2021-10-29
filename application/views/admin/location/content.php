@@ -9,28 +9,26 @@
                     <table class="table table-striped table-bordered table-sm"  width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Icon</th>
-                                <th>Name</th>
-                                <th>Link</th>
-                                <th>Aksi</th>
+                                <th width="10%">ID</th>
+                                <th width="10%">Name</th>
+                                <th  width="70%">Link</th>
+                                <th width="10%">Aksi</th>
                             </tr>
                         </thead>
 
                         <tbody>
                         <?php 
                       
-                        $jumlah = count($connected);
+                        $jumlah = count($location);
                         for($i=0;$i<$jumlah;$i++){
                            
                         ?>
                             <tr>
-                                <td> <?= $connected[$i]['id']?></td>
-                                <td ><?= $connected[$i]['icon']?></td>
-                                <td ><?= $connected[$i]['name']?></td>
-                                <td> <a href="<?= $connected[$i]['link']?>" target="_blank"><?= substr($connected[$i]['link'],0,40)?> ... </a></td>
-                                <td>
-                                <a href="<?= base_url('admin/edit_connected/'.$connected[$i]['id']); ?>" type="button"
+                                <td width="10%"> <?= $location[$i]['id']?></td>
+                                <td width="10%"><?= $location[$i]['name']?></td>
+                                <td width="700%"><?= $location[$i]['link']?></td>
+                                <td width="10%">
+                                <a href="<?= base_url('admin/edit_location/'.$location[$i]['id']); ?>" type="button"
                                         class="badge badge-warning">Edit</a>                             
                                 </td>
                             </tr>

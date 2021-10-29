@@ -10,7 +10,6 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Icon</th>
                                 <th>Name</th>
                                 <th>Link</th>
                                 <th>Aksi</th>
@@ -20,17 +19,16 @@
                         <tbody>
                         <?php 
                       
-                        $jumlah = count($connected);
+                        $jumlah = count($feature);
                         for($i=0;$i<$jumlah;$i++){
                            
                         ?>
                             <tr>
-                                <td> <?= $connected[$i]['id']?></td>
-                                <td ><?= $connected[$i]['icon']?></td>
-                                <td ><?= $connected[$i]['name']?></td>
-                                <td> <a href="<?= $connected[$i]['link']?>" target="_blank"><?= substr($connected[$i]['link'],0,40)?> ... </a></td>
+                                <td> <?= $feature[$i]['id']?></td>
+                                <td ><?= $feature[$i]['name']?></td>
+                                <td><?= $feature[$i]['link']?></td>
                                 <td>
-                                <a href="<?= base_url('admin/edit_connected/'.$connected[$i]['id']); ?>" type="button"
+                                <a href="<?= base_url('admin/edit_feature/'.$feature[$i]['id']); ?>" type="button"
                                         class="badge badge-warning">Edit</a>                             
                                 </td>
                             </tr>

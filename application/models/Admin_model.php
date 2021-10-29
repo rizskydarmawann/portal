@@ -675,12 +675,67 @@ public function getdetailconnected($id){
 public function update_connected(){
 
 	$data = array(
+		'icon' => $this->input->post('icon'),
 		'name' => $this->input->post('name'),
 		'link' => $this->input->post('link')
 		);
 
 	$this->db->where('id',$this->input->post('id'));
 	$this->db->update('connected', $data);
+
+}
+
+public function getallfeature(){
+
+	$sql = $this->db->query("select * from feature ")->result_array();
+	return $sql;
+
+}
+
+public function getdetailfeature($id){
+
+	$sql = $this->db->query("select * from feature where id = '".$id."'")->result_array();
+	return $sql;
+
+}
+
+
+public function update_feature(){
+
+	$data = array(
+		'name' => $this->input->post('name'),
+		'link' => $this->input->post('link')
+		);
+
+	$this->db->where('id',$this->input->post('id'));
+	$this->db->update('feature', $data);
+
+}
+
+public function getalllocation(){
+
+	$sql = $this->db->query("select * from location ")->result_array();
+	return $sql;
+
+}
+
+public function getdetaillocation($id){
+
+	$sql = $this->db->query("select * from location where id = '".$id."'")->result_array();
+	return $sql;
+
+}
+
+
+public function update_location(){
+
+	$data = array(
+		'name' => $this->input->post('name'),
+		'link' => $this->input->post('link')
+		);
+
+	$this->db->where('id',$this->input->post('id'));
+	$this->db->update('location', $data);
 
 }
 
